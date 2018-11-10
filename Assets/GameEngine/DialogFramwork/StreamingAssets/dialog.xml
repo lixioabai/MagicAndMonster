@@ -1,0 +1,31 @@
+﻿<GuanKa>
+	<scenes name="diaoyudao">
+		 <guan bianhao="101"> 	
+				<duihua dialog="我们即将进入钓鱼岛12海里基线范围内，前方发现日本船只。" id="001" next ="1"/>
+				<duihua dialog="警告，你们即将进入钓鱼岛区域，请马上离开。" id="002" next ="1"/>
+				<duihua dialog="让我们加速冲过去。" id="001" next ="1"/>
+				<duihua dialog="警告！请马上离开！警告！请马上离开！" id="002" next ="1"/>
+       <duihua dialog="看到前方绿色圆圈，点击绿色圆圈，移动过去。" id="001" next ="0"/>
+       <duihua dialog="很好，你已经学会了如何移动。" id="002" next ="1"/>
+       <duihua dialog="我们已经进入了12海里基线范围内，不过日本船只还跟在我们后面。" id="001" next ="1"/>
+       <duihua dialog="警告！你们已经闯入钓鱼岛区域内！请马上离开！" id="002" next ="0"/>
+       <duihua dialog="我们已经甩掉他们了，前方还有一艘拦截的，冲过他们。" id="001" next ="1"/>
+       <duihua dialog="请马上离开！请马上离开！" id="002" next ="1"/>
+       <duihua dialog="使用冲刺，冲过最后的阻碍。" id="001" next ="0"/>        
+	   </guan>
+    <guan bianhao="102">
+      <duihua dialog="刚摆脱两艘，又来了一艘。" id="0" next ="1"/>
+      <duihua dialog="前方船只请马上离开，否则我们将采取措施。" id="1" next ="1"/>
+      <duihua dialog="不好，他们好像要攻击我们，我们也用水炮反击。" id="0" next ="1"/>
+      <duihua dialog="终于把对方击退了，让我们继续朝钓鱼岛前进。" id="0" next ="0"/>
+      <duihua dialog="前面船只立刻减速停船，接受检查，不要做无谓的抵抗。" id="1" next ="1"/>
+      <duihua dialog="糟糕，对方来了两艘船包夹我们，小心对付，使用水炮击退他们。" id="0" next ="1"/>
+      <duihua dialog="右边船只血量较少我们先攻击他们，点击船只切换攻击目标。" id="0" next ="0"/>
+    </guan>
+    <guan bianhao="103">
+      <duihua dialog="我们已经到达钓鱼岛5海里范围内，打开航海图，确认一下我们当前的方位。" id="0" next ="1"/>
+      <duihua dialog="按TAB键打开小地图，查看我们当前方位和目标位置。" id="0" next="0"/>
+      <duihua dialog="离岛越近，我们遭遇的阻力也越强，击退他们。" id="0" next ="0"/>
+    </guan>
+	</scenes>
+</GuanKa>

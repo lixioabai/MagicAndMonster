@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{108FA817-008D-606E-6D4E-8B96BF4ACFA2}") = "MagicAndMonster", "Assembly-CSharp.csproj", "{424122FE-DABE-DA8B-65AA-4DB9489D51A3}"
+EndProject
+Project("{108FA817-008D-606E-6D4E-8B96BF4ACFA2}") = "MagicAndMonster", "Assembly-CSharp-Editor.csproj", "{8CA61245-86E0-FEC2-CF08-57E172C651E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{424122FE-DABE-DA8B-65AA-4DB9489D51A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{424122FE-DABE-DA8B-65AA-4DB9489D51A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{424122FE-DABE-DA8B-65AA-4DB9489D51A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{424122FE-DABE-DA8B-65AA-4DB9489D51A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CA61245-86E0-FEC2-CF08-57E172C651E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA61245-86E0-FEC2-CF08-57E172C651E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA61245-86E0-FEC2-CF08-57E172C651E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA61245-86E0-FEC2-CF08-57E172C651E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

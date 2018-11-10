@@ -1,0 +1,5 @@
+﻿Drug,中毒,5,-30,HP
+Frostbite,冻伤,5,-0.5,MoveSpeed
+Burnt,烧伤,5,-30,HP
+Shield,护盾,10,30,DEF
+Null,无,0,0,HP

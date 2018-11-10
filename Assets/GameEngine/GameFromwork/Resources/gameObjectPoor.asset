@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aadffe4ab81a714c90c239f3af83aed, type: 3}
+  m_Name: gameObjectPoor
+  m_EditorClassIdentifier: 
+  pooList:
+  - name: bullet
+    prefab: {fileID: 120490, guid: 74baa4b4a07258843af32925a665aea1, type: 2}
+    maxAmound: 10
+  - name: effect
+    prefab: {fileID: 113782, guid: 95d79a5668607a246885dc57f70804a6, type: 2}
+    maxAmound: 5
+  - name: music
+    prefab: {fileID: 187040, guid: 83ffbd967026c904bac1dcee867c9b49, type: 2}
+    maxAmound: 5

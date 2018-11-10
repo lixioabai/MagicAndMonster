@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{424122FE-DABE-DA8B-65AA-4DB9489D51A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_4;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Example for EasyButton\Bullet.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Example for EasyButton\ETPlayer.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyJoystick\Example-thirdPerson_DirectEventMode\JoystickEvent.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyJoystick\Example_FirstPerson_DirectMode\GUIFirstDirect.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyJoystick\ExitButton.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-FreeCam\FreeCam.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-FreeCam\GuiCam.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-ManipulationImage\GuiPhoto.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-ManipulationImage\Photo.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-MultiLayer\GuiLayer.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-MultiLayer\TouchLayer.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-Multiplefingers\GuiMultiFinger.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-Multiplefingers\ObjectTouch.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-Multiplefingers\ScreenTouch.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-Multiplefingers\SlowRotate.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-OneFinger\DoubleTap.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-OneFinger\Drag.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-OneFinger\GuiOneFinger.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-OneFinger\LongTap.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-OneFinger\Swipe.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-OneFinger\Tap.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-OneFinger\TouchStart.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-StartMenu\GuiStartMenu.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\GuiTwoFinger.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\Pinch.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\Twist.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\TwoDoubleTap.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\TwoDrag.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\TwoLongTap.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\TwoSwipe.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\TwoTap.cs" />
+     <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\TwoTouchStart.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\ECamera.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\EasyButton.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\EasyJoystick.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\EasyTouch.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\EasyTouchInput.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\Finger.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\Gesture.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\MonoSingleton.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\MovingJoystick.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\VirtualScreen.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\_C#-Event-Template\C_EasyButtonTemplate.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\_C#-Event-Template\C_EasyJoystickTemplate.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\_C#-Event-Template\C_EasyTouchTemplate.cs" />
+     <Compile Include="Assets\GameEngine\DebugerFramwork\Unity-Logs-Viewer-master\Reporter\MultiKeyDictionary.cs" />
+     <Compile Include="Assets\GameEngine\DebugerFramwork\Unity-Logs-Viewer-master\Reporter\Reporter.cs" />
+     <Compile Include="Assets\GameEngine\DebugerFramwork\Unity-Logs-Viewer-master\Reporter\ReporterGUI.cs" />
+     <Compile Include="Assets\GameEngine\DebugerFramwork\Unity-Logs-Viewer-master\Reporter\ReporterMessageReceiver.cs" />
+     <Compile Include="Assets\GameEngine\DebugerFramwork\Unity-Logs-Viewer-master\Reporter\Test\Rotate.cs" />
+     <Compile Include="Assets\GameEngine\DebugerFramwork\Unity-Logs-Viewer-master\Reporter\Test\TestReporter.cs" />
+     <Compile Include="Assets\GameEngine\DialogFramwork\Scripts\DialogSystem.cs" />
+     <Compile Include="Assets\GameEngine\DialogFramwork\Scripts\DialogXMLLoadAndSave.cs" />
+     <Compile Include="Assets\GameEngine\DialogFramwork\Scripts\Global.cs" />
+     <Compile Include="Assets\GameEngine\DialogFramwork\Scripts\NewPlayerGuid.cs" />
+     <Compile Include="Assets\GameEngine\GameFromwork\Config\AppConfig.cs" />
+     <Compile Include="Assets\GameEngine\GameFromwork\Scripts\Manager\AudioManager\AudioManager.cs" />
+     <Compile Include="Assets\GameEngine\GameFromwork\Scripts\Manager\AudioManager\AudioManagerFIFO.cs" />
+     <Compile Include="Assets\GameEngine\GameFromwork\Scripts\Manager\LanguageManager\LocalLanguageManager.cs" />
+     <Compile Include="Assets\GameEngine\GameFromwork\Scripts\Manager\LanguageManager\LocalLanguageUI.cs" />
+     <Compile Include="Assets\GameEngine\GameFromwork\Scripts\Manager\PoorManager\DeactiveTime.cs" />
+     <Compile Include="Assets\GameEngine\GameFromwork\Scripts\Manager\PoorManager\GameObjectManager.cs" />
+     <Compile Include="Assets\GameEngine\GameFromwork\Scripts\Manager\PoorManager\GameObjectManagerList.cs" />
+     <Compile Include="Assets\GameEngine\GameFromwork\Scripts\Manager\PoorManager\PoorManager.cs" />
+     <Compile Include="Assets\GameEngine\GameFromwork\Scripts\TestManager\Test.cs" />
+     <Compile Include="Assets\GameEngine\GameFromwork\Scripts\Tools\DontDestory.cs" />
+     <Compile Include="Assets\GameEngine\GameFromwork\Scripts\Tools\LoadingSync.cs" />
+     <Compile Include="Assets\GameEngine\GameFromwork\Scripts\Tools\ResourcesMgr.cs" />
+     <Compile Include="Assets\GameEngine\GameFromwork\Scripts\Tools\iTween.cs" />
+     <Compile Include="Assets\GameEngine\MessageCenter\MessageCenter.cs" />
+     <Compile Include="Assets\GameEngine\UIFramwork\Plugins\UGUITweens.cs" />
+     <Compile Include="Assets\LoadDataPanel.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Camera\LoadPlayerCameraControl.cs" />
+     <Compile Include="Assets\Scripts\Camera\MMORPG_PlayerCamera.cs" />
+     <Compile Include="Assets\Scripts\MVC\Model\LocalSettingController.cs" />
+     <Compile Include="Assets\Scripts\MVC\Model\PlayerSaveModel.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\LoginPanel.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\Root\LoadDataRoot.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\Root\LoginRoot.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\Root\SelectRoot.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\SelectPlayerFBX.cs" />
+     <Compile Include="Assets\Scripts\UI\UIFollowTarget.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\AI\MMORPG_BaseObject_AI.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\AI\MMORPG_BaseObject_AI_State_Attack.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\AI\MMORPG_BaseObject_AI_State_BackBirth.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\AI\MMORPG_BaseObject_AI_State_Chase.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\AI\MMORPG_BaseObject_AI_State_Die.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\AI\MMORPG_BaseObject_AI_State_Global.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\AI\MMORPG_BaseObject_AI_State_Hurt.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\AI\MMORPG_BaseObject_AI_State_Idle.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\BaseController\MMORPG_AnimationStateInfo.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\BaseController\MMORPG_BaseGameEntity.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\BaseController\MMORPG_BaseObject.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\BaseController\MMORPG_ET_Controller.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\BaseController\MMORPG_PC_Controller.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Buff\Base\MMORPG_BaseBuff.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Buff\Base\MMORPG_BaseDeBuff.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Buff\Down\MMORPG_DeBuff_Dark.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Buff\Down\MMORPG_DeBuff_Fire.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Buff\Down\MMORPG_DeBuff_Ice.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Buff\Down\MMORPG_DeBuff_Light.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Buff\Down\MMORPG_DeBuff_Poison.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Buff\Up\MMORPG_Buff_Dark.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Buff\Up\MMORPG_Buff_Fire.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Buff\Up\MMORPG_Buff_Ice.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Buff\Up\MMORPG_Buff_Light.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Buff\Up\MMORPG_Buff_Poison.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\EnumDefine.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player_State_Die.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player_State_Global.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player_State_Hurt.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player_State_Idle.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player_State_Move.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\TestInputs.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Camera\CameraMovement.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Camera\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Camera\toujicamera.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Controller\RPGCollisions.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Controller\RPGInput.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Controller\RPGMesh.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Controller\RPGMotor.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Controller\RPGTriangleTree.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\DOTEffect\DOTInfo.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\DOTEffect\Dot.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\DOTEffect\DotEffect.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\DisplayShowHurt.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\FFallhit.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\LBY_NEW\Goblin.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\LBY_NEW\GoblinActive.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\LBY_NEW\GoblinGlobal.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\LBY_NEW\GoblinPasive.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\LBY_NEW\GoblinState.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\LBY_NEW\SuiJiGoblin.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Other\ADDForce.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Other\AllEffects.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Other\EnemyGravty.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Other\HashIDs.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Skills\BuffBase\Buff.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Skills\BuffBase\BuffEffect.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Skills\BuffBase\BuffInfo.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Skills\BuffBase\BuffState.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Skills\BuffBase\EveryBuff.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Skills\ShowHurt\PlayerPanDuan.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Skills\ShowHurt\piaoshuzhi.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Skills\ShowHurt\shuzhishengcheng.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Skills\Skill.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Skills\SkillEffect.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Skills\SkillInfo.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Skills\WMasterSkill\FireStree.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Skills\WMasterSkill\WindMove.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Skills\YTSkill\Targermove.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Skills\read.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Skills\shuxing.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\Skills\shuxingd.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_FSMFramwork\Base\BaseGameEntity.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_FSMFramwork\Base\EntityManager.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_FSMFramwork\Message\MessageDispatcher.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_FSMFramwork\Message\MessageManager.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_FSMFramwork\State\State.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_FSMFramwork\State\StateMachine.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_IBase\CommonAttack.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_IBase\CommonPasive.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_IBase\CommonSkillF.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_IBase\CommonSkillM.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_IBase\CommonSkillQ.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_IBase\CommonSkillR.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_IBase\CommonSkillS.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_IBase\GameEntityDefine.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_IBase\MyLocomotion.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_IBase\Player.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_IBase\PlayerGlobal.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_IBase\PlayerState.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_IBase\Player_StateMovement.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\_IBase\Player_StateSkill.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\floathit.cs" />
+     <Compile Include="Assets\Scripts\_Scripts\hittest.cs" />
+     <Compile Include="Assets\SelectPlayerPanel.cs" />
+     <None Include="Assets\GameEngine\GameFromwork\Resources\LocalLanguage\English.txt" />
+     <None Include="Assets\GameEngine\GameFromwork\Resources\audiolist.txt" />
+     <None Include="Assets\T4M\Shaders\ShaderModel2\Diffuse\T4M 4 Textures.shader" />
+     <None Include="Assets\EasyTouch\Readme_first.txt" />
+     <None Include="Assets\Normal-Diffuse.shader" />
+     <None Include="Assets\Scripts\_Scripts\DoubleShaderList.shader" />
+     <None Include="Assets\Resources\Shader\Alpha-Diffuse.shader" />
+     <None Include="Assets\Scripts\_Scripts\DOTEffect\DOT.txt" />
+     <None Include="Assets\Resources\Shader\Alpha-Diffuse_Cull.shader" />
+     <None Include="Assets\FullFantasyGameSet\11kAnimatedFantasyHeroes\Documentation.txt" />
+     <None Include="Assets\FullFantasyGameSet\LowpolyToonForest\materials\TerrainShader2Diff.shader" />
+     <None Include="Assets\StreamingAssets\build_info.txt" />
+     <None Include="Assets\FullFantasyGameSet\LowpolyToonForestWinter\materials\TerrainShader2Diff.shader" />
+     <None Include="Assets\ArtRes\Objects\Scene\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\FullFantasyGameSet\LowpolyToonForestWinter\shaders\DoublesidedCutout\AlphaTest-DiffuseDoublesided.shader" />
+     <None Include="Assets\FullFantasyGameSet\FantasyWeaponsSet\Documentation.txt" />
+     <None Include="Assets\GameEngine\GameFromwork\Resources\LocalLanguage\Chinese.txt" />
+     <None Include="Assets\GameEngine\DialogFramwork\StreamingAssets\dialog.xml" />
+     <None Include="Assets\FullFantasyGameSet\LowpolyToonForestWinter\shaders\DoublesidedCutout\AlphaTest-DiffuseBack.shader" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>E:/LBYSourcesDic/自学/MagicAndMonster/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="EasyMVC">
+ <HintPath>E:/LBYSourcesDic/自学/MagicAndMonster/Assets/GameEngine/UIFramwork/Plugins/EasyMVC.dll</HintPath>
+ </Reference>
+ <Reference Include="LitJson">
+ <HintPath>E:/LBYSourcesDic/自学/MagicAndMonster/Assets/GameEngine/UIFramwork/Plugins/LitJson.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

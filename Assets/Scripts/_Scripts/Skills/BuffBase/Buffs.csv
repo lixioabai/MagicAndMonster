@@ -1,0 +1,7 @@
+ID,Buff,名称,持续时间,效果值,影响的属性
+1,Drug,中毒,5,-30,HP
+2,Frostbite,冻伤,5,-2,MoveSpeed
+3,Burnt,烧伤,5,-30,HP
+4,Shield,护盾,10,30,DEF
+5,SuperArmor,霸体,6,0,HP
+6,Null,无,0,0,HP

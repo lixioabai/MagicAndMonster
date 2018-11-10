@@ -1,0 +1,349 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EasyMVC</name>
+    </assembly>
+    <members>
+        <member name="T:EasyMVC.PanelBase">
+            <summary>
+            面板基类实现
+            </summary>
+        </member>
+        <member name="F:EasyMVC.PanelBase.skinPath">
+            <summary>
+            皮肤路径
+            </summary>
+        </member>
+        <member name="F:EasyMVC.PanelBase.skin">
+            <summary>
+            皮肤(面板自身)
+            </summary>
+        </member>
+        <member name="F:EasyMVC.PanelBase.layer">
+            <summary>
+            层级
+            </summary>
+        </member>
+        <member name="F:EasyMVC.PanelBase.args">
+            <summary>
+            面板参数
+            </summary>
+        </member>
+        <member name="F:EasyMVC.PanelBase.HighLightBtn">
+            <summary>
+            高亮按钮
+            </summary>
+        </member>
+        <member name="F:EasyMVC.PanelBase.isReload">
+            <summary>
+            是否需要初始化参数
+            </summary>
+        </member>
+        <member name="M:EasyMVC.PanelBase.Init(System.Object[])">
+            <summary>
+            初始化
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:EasyMVC.PanelBase.OnShowing">
+            <summary>
+            开始面板前
+            </summary>
+        </member>
+        <member name="M:EasyMVC.PanelBase.OnShowed">
+            <summary>
+            显示面板后
+            </summary>
+        </member>
+        <member name="M:EasyMVC.PanelBase.Update">
+            <summary>
+            帧更新
+            </summary>
+        </member>
+        <member name="M:EasyMVC.PanelBase.OnClosing">
+            <summary>
+            关闭前
+            </summary>
+        </member>
+        <member name="M:EasyMVC.PanelBase.OnClosed">
+            <summary>
+            关闭后
+            </summary>
+        </member>
+        <member name="M:EasyMVC.PanelBase.Close">
+            <summary>
+            销毁界面
+            </summary>
+        </member>
+        <member name="M:EasyMVC.PanelBase.ClosePanel(System.String)">
+            <summary>
+            关闭指定界面
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:EasyMVC.PanelBase.ClosePanel``1">
+            <summary>
+            关闭指定界面
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:EasyMVC.PanelBase.OpenPanel``1(System.String,System.String)">
+            <summary>
+            打开界面
+            </summary>
+            <typeparam name="T">界面脚本名称</typeparam>
+            <param name="skinPath">界面路径（可省略为 ""）</param>
+            <param name="panelArgs">界面参数</param>
+        </member>
+        <member name="M:EasyMVC.PanelBase.OpenPanel``1">
+            <summary>
+            打开界面
+            </summary>
+            <typeparam name="T">界面</typeparam>
+        </member>
+        <member name="M:EasyMVC.PanelBase.OpenAndHideAllOthers``1">
+            <summary>
+            打开指定界面并关闭其它界面
+            </summary>
+            <typeparam name="T">打开和不被关闭界面</typeparam>
+        </member>
+        <member name="M:EasyMVC.PanelBase.OpenAndHideSelf``1">
+            <summary>
+            打开指定界面并关闭自身
+            </summary>
+            <typeparam name="T">打开的界面</typeparam>
+        </member>
+        <member name="M:EasyMVC.PanelBase.OpenOneAndHideOne``1(System.String)">
+            <summary>
+            打开指定界面并关闭指定的界面
+            </summary>
+            <typeparam name="T">打开的界面</typeparam>
+        </member>
+        <member name="M:EasyMVC.PanelBase.HidePanel">
+            <summary>
+            隐藏界面（不销毁实例）
+            </summary>
+        </member>
+        <member name="M:EasyMVC.PanelBase.HidePanel(System.String)">
+            <summary>
+            隐藏界面
+            </summary>
+            <param name="panelName">隐藏界面的名称</param>
+        </member>
+        <member name="M:EasyMVC.PanelBase.HidePanel``1">
+            <summary>
+            隐藏界面
+            </summary>
+        </member>
+        <member name="M:EasyMVC.PanelBase.GetScripts``1(System.String)">
+            <summary>
+            获取子物体脚本
+            </summary>
+            <typeparam name="T">脚本类型（组件类型）</typeparam>
+            <param name="ChildName">子物体名称</param>
+        </member>
+        <member name="M:EasyMVC.PanelBase.GetPanelScripts``1">
+            <summary>
+            获取某个Panel界面的脚本（子类封装）
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:EasyMVC.PanelBase.SelectedOnStart(UnityEngine.UI.Button,System.Boolean)">
+            <summary>
+            按钮是否一开始就高亮
+            </summary>
+            <param name="button"></param>
+            <param name="isSelectOnStart"></param>
+        </member>
+        <member name="M:EasyMVC.PanelBase.ChangeDepth(System.Int32)">
+            <summary>
+            修改本界面层级
+            </summary>
+            <param name="index">层级</param>
+        </member>
+        <member name="M:EasyMVC.PanelBase.SetPanelLayer">
+            <summary>
+            设置界面层级
+            </summary>
+        </member>
+        <member name="M:EasyMVC.PanelBase.FindTheChildNode(UnityEngine.GameObject,System.String)">
+            <summary>
+            查找子对象方法
+            </summary>
+            <param name="goParent">父对象</param>
+            <param name="ChildName">查找的子对象名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:EasyMVC.PanelBase.GetChildScripts``1(UnityEngine.GameObject,System.String)">
+            <summary>
+            获取特定子节点脚本
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="goParent">父对象</param>
+            <param name="ChildName">子对象名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:EasyMVC.PanelBase.RigistButtonEvent(System.String,UnityEngine.Events.UnityAction,System.Boolean)">
+            <summary>
+            按钮注册
+            </summary>
+            <param name="buttonName"></param>
+            <param name="Action"></param>
+            <param name="isSelectOnStart"></param>
+             <param name="isDelegate">用于区分多个重载之间的二义性，无实际意义</param>
+        </member>
+        <member name="M:EasyMVC.PanelBase.RigistButtonEvent(System.String,UnityEngine.Events.UnityAction{System.String},System.String,System.Boolean)">
+            <summary>
+            按钮注册
+            </summary>
+            <param name="buttonName"></param>
+            <param name="Action">带参注册</param>
+            <param name="args">参数</param>
+            <param name="isSelectOnStart"></param>
+        </member>
+        <member name="M:EasyMVC.PanelBase.RigistButtonEvent``1(System.String,UnityEngine.Events.UnityAction{``0},System.Boolean)">
+            <summary>
+            按钮注册
+            </summary>
+            <param name="buttonName"></param>
+            <param name="Action">带参注册</param>
+            <param name="T">泛型</param>
+            <param name="isSelectOnStart"></param>
+        </member>
+        <member name="M:EasyMVC.PanelBase.RigistButtonEvent(System.String,EasyMVC.PanelMgr.PanelDelegete,System.Boolean)">
+            <summary>
+            按钮注册
+            </summary>
+            <param name="buttonName">按钮名称</param>
+            <param name="handle">委托</param>
+            <param name="isSelectOnStart">是否高亮</param>
+        </member>
+        <member name="M:EasyMVC.PanelBase.RigistButtonEvent(System.String,EasyMVC.PanelMgr.PanelDelegete,UnityEngine.EventSystems.EventTriggerType,System.Boolean,System.String)">
+            <summary>
+            按钮事件注册：移动 按下 抬起 
+            </summary>
+            <param name="buttonName">按钮名称</param>
+            <param name="handle">委托</param>
+            <param name="ButtonControlType">枚举操控类型</param>
+            <param name="isSelectOnStart">是否高亮</param>
+        </member>
+        <member name="T:EasyMVC.PanelLayer">
+            <summary>
+            层级枚举
+            </summary>
+        </member>
+        <member name="F:EasyMVC.PanelLayer.Panel">
+            <summary>
+            面板
+            </summary>
+        </member>
+        <member name="F:EasyMVC.PanelLayer.Tips">
+            <summary>
+            前层提示
+            </summary>
+        </member>
+        <member name="F:EasyMVC.PanelLayer.BackGround">
+            <summary>
+            后层面板
+            </summary>
+        </member>
+        <member name="T:EasyMVC.PanelMgr">
+            <summary>
+            面板管理器
+            </summary>
+        </member>
+        <member name="F:EasyMVC.PanelMgr.instance">
+            <summary>
+            单利
+            </summary>
+        </member>
+        <member name="F:EasyMVC.PanelMgr.dict">
+            <summary>
+            面板字典 键：面板名称 值：面板基类
+            </summary>
+        </member>
+        <member name="F:EasyMVC.PanelMgr.panelDict">
+            <summary>
+            实例化字典集合 键：面板名称  值：面板实体（GameObject）
+            </summary>
+        </member>
+        <member name="M:EasyMVC.PanelMgr.GetPanelScripts``1">
+            <summary>
+            根据传入的脚本 T 获取对应的实例（GameObject）
+            获取一个实例化的Panel
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:EasyMVC.PanelMgr.OpenPanel``1(System.String,System.Object[])">
+            <summary>
+            打开（实例化/解冻）一个界面
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="skinPath"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:EasyMVC.PanelMgr.ClosePanel(System.String)">
+            <summary>
+            关闭面板
+            </summary>
+            <param name="name">面板名称</param>
+        </member>
+        <member name="M:EasyMVC.PanelMgr.ClosePanel``1">
+            <summary>
+            关闭面板
+            </summary>
+            <param name="T">面板名称</param>
+        </member>
+        <member name="M:EasyMVC.PanelMgr.HidePanel(System.String)">
+            <summary>
+            隐藏面板
+            </summary>
+            <param name="name">面板名称</param>
+        </member>
+        <member name="M:EasyMVC.PanelMgr.HidePanel``1">
+            <summary>
+            隐藏面板
+            </summary>
+            <param name="T">类名</param>
+        </member>
+        <member name="T:EasyMVC.PanelMgr.PanelDelegete">
+            <summary>
+            界面委托（用于方法的传递）
+            </summary>
+            <param name="go">委托对应的对象实体 （GameObject）</param>
+        </member>
+        <member name="T:EasyMVC.PanelTools">
+            <summary>
+            Panel 界面的工具类
+            </summary>
+        </member>
+        <member name="F:EasyMVC.PanelTools.PlayList">
+            <summary>
+            队列集合
+            </summary>
+        </member>
+        <member name="F:EasyMVC.PanelTools.currentPlayAudioClip">
+            <summary>
+            当前正在播放的音源
+            </summary>
+        </member>
+        <member name="F:EasyMVC.PanelTools.FirstPlay">
+            <summary>
+            是否优先播放
+            </summary>
+        </member>
+        <member name="M:EasyMVC.PanelTools.CreatAndPlay(UnityEngine.AudioClip,System.Boolean)">
+            <summary>
+            创建并播放音源
+            </summary>
+            <param name="ac"></param>
+        </member>
+        <member name="M:EasyMVC.PanelTools.PlayFirstAudio(System.String)">
+            <summary>
+            优先播放的音源
+            </summary>
+        </member>
+    </members>
+</doc>

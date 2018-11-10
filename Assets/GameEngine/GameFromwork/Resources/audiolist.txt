@@ -1,0 +1,14 @@
+SelectIcon,Audio/SelectIcon
+SelectMatch,Audio/SelectMatch
+Teach_Jump,Audio/Jump/Teach_Jump
+Teach_PigJump,Audio/Jump/Teach_PigJump
+TheJump,Audio/Jump/TheJump
+SelectPlayer,Audio/SelectPlayer
+Pige_Drop,Audio/Jump/Pige_Drop
+Susi_Drop,Audio/Jump/Susi_Drop
+Zoyi_Drop,Audio/Jump/Zoyi_Drop
+Joje_Drop,Audio/Jump/Joje_Drop
+Oh_No,Audio/Jump/Oh_No
+TeachJumpLong,Audio/JumpLong/TeachJumpLong
+Tug_of_War,Audio/TugOfWar/Tug_of_War
+ClickToDrive,Audio/Bicycle/ClickToDrive

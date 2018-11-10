@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: 2e1b60283af5a7f458c89a1e7e7c837e
+timeCreated: 1540806511
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bip02
+    100002: Bip02 Head
+    100004: Bip02 L Calf
+    100006: Bip02 L Clavicle
+    100008: Bip02 L Foot
+    100010: Bip02 L Forearm
+    100012: Bip02 L Hand
+    100014: Bip02 L Thigh
+    100016: Bip02 L Toe0
+    100018: Bip02 L UpperArm
+    100020: Bip02 Neck
+    100022: Bip02 Pelvis
+    100024: Bip02 Prop1
+    100026: Bip02 Prop2
+    100028: Bip02 R Calf
+    100030: Bip02 R Clavicle
+    100032: Bip02 R Foot
+    100034: Bip02 R Forearm
+    100036: Bip02 R Hand
+    100038: Bip02 R Thigh
+    100040: Bip02 R Toe0
+    100042: Bip02 R UpperArm
+    100044: Bip02 Spine
+    100046: Bip02 Spine1
+    100048: Bone01
+    100050: Bone02
+    100052: Bone03
+    100054: Bone04
+    100056: Bone05
+    100058: Bone06
+    100060: Bone07
+    100062: dajian01_left
+    100064: dajian01_right
+    100066: //RootNode
+    100068: hero_0_0001_body
+    100070: hero_0_0001_head
+    400000: Bip02
+    400002: Bip02 Head
+    400004: Bip02 L Calf
+    400006: Bip02 L Clavicle
+    400008: Bip02 L Foot
+    400010: Bip02 L Forearm
+    400012: Bip02 L Hand
+    400014: Bip02 L Thigh
+    400016: Bip02 L Toe0
+    400018: Bip02 L UpperArm
+    400020: Bip02 Neck
+    400022: Bip02 Pelvis
+    400024: Bip02 Prop1
+    400026: Bip02 Prop2
+    400028: Bip02 R Calf
+    400030: Bip02 R Clavicle
+    400032: Bip02 R Foot
+    400034: Bip02 R Forearm
+    400036: Bip02 R Hand
+    400038: Bip02 R Thigh
+    400040: Bip02 R Toe0
+    400042: Bip02 R UpperArm
+    400044: Bip02 Spine
+    400046: Bip02 Spine1
+    400048: Bone01
+    400050: Bone02
+    400052: Bone03
+    400054: Bone04
+    400056: Bone05
+    400058: Bone06
+    400060: Bone07
+    400062: dajian01_left
+    400064: dajian01_right
+    400066: //RootNode
+    400068: hero_0_0001_body
+    400070: hero_0_0001_head
+    4300000: hero_0_0001_head
+    4300002: hero_0_0001_body
+    4300004: dajian01_left
+    4300006: dajian01_right
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: dajian01_left
+    13700002: dajian01_right
+    13700004: hero_0_0001_body
+    13700006: hero_0_0001_head
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

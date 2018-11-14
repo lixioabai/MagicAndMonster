@@ -28,11 +28,33 @@ public class MMORPG_BaseObject_Player_State_Idle : State<MMORPG_BaseObject_Playe
             }
             else
             {
-                entity.AnimationStateChange(MMORPG_AnimationStateInfo.Idle, true);
+                if (entity.isFightState)
+                {
+                    entity.AnimationStateChange(MMORPG_AnimationStateInfo_Player.AttackIdle, true);
+                }
+                else
+                {
+                entity.AnimationStateChange(MMORPG_AnimationStateInfo_Player.NormalIdle, true);
+                 }
+               
             }
-      
-       
-       
+
+        #region 休闲和战斗状态
+        if (entity.isFightState)
+        {
+            entity.ExitFightTime -= Time.deltaTime;
+            if (entity.ExitFightTime <= 0)
+            {
+                entity.isFightState = false;
+                entity.ExitFightTime = MMORPG_GlobalParmater.TIME_EXIST_FIGHT;
+            }
+        }
+
+        #endregion
+
+
+
+
     }
     public override void Execute(MMORPG_BaseObject_Player entity)
     {
@@ -44,8 +66,15 @@ public class MMORPG_BaseObject_Player_State_Idle : State<MMORPG_BaseObject_Playe
             }
             else
             {
-                entity.AnimationStateChange(MMORPG_AnimationStateInfo.Idle, true);
-            }
+                if (entity.isFightState)
+                {
+                    entity.AnimationStateChange(MMORPG_AnimationStateInfo_Player.AttackIdle, true);
+                }
+                else
+                {
+                    entity.AnimationStateChange(MMORPG_AnimationStateInfo_Player.NormalIdle, true);
+                }
+        }
        
 
     }

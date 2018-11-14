@@ -137,6 +137,8 @@
      <Compile Include="Assets\Scripts\_MMORPG\AI\MMORPG_BaseObject_AI_State_Hurt.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\AI\MMORPG_BaseObject_AI_State_Idle.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\BaseController\MMORPG_AnimationStateInfo.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\BaseController\MMORPG_AnimationStateInfo_AI.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\BaseController\MMORPG_AnimationStateInfo_Player.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\BaseController\MMORPG_BaseGameEntity.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\BaseController\MMORPG_BaseObject.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\BaseController\MMORPG_ET_Controller.cs" />
@@ -154,10 +156,14 @@
      <Compile Include="Assets\Scripts\_MMORPG\Buff\Up\MMORPG_Buff_Light.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\Buff\Up\MMORPG_Buff_Poison.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\EnumDefine.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\MMORPG_GlobalParmater.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player_State_Attack.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player_State_Die.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player_State_Global.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player_State_Hurt.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player_State_HurtBack.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player_State_HurtFloat.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player_State_Idle.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player_State_Move.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\TestInputs.cs" />
@@ -244,7 +250,7 @@
      <None Include="Assets\GameEngine\DialogFramwork\StreamingAssets\dialog.xml" />
      <None Include="Assets\FullFantasyGameSet\LowpolyToonForestWinter\shaders\DoublesidedCutout\AlphaTest-DiffuseBack.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>E:/LBYSourcesDic/自学/MagicAndMonster/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>E:/UnityProgram/githubs/MagicAndMonster/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -253,10 +259,10 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="EasyMVC">
- <HintPath>E:/LBYSourcesDic/自学/MagicAndMonster/Assets/GameEngine/UIFramwork/Plugins/EasyMVC.dll</HintPath>
+ <HintPath>E:/UnityProgram/githubs/MagicAndMonster/Assets/GameEngine/UIFramwork/Plugins/EasyMVC.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
- <HintPath>E:/LBYSourcesDic/自学/MagicAndMonster/Assets/GameEngine/UIFramwork/Plugins/LitJson.dll</HintPath>
+ <HintPath>E:/UnityProgram/githubs/MagicAndMonster/Assets/GameEngine/UIFramwork/Plugins/LitJson.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

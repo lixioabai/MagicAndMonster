@@ -37,4 +37,17 @@ public class EnumDefine
         Silent,  //沉默
         Death,   //死亡
     }
+
+
+
+    /// <summary>
+    /// 消息类型
+    /// </summary>
+    public enum MessageType
+    {
+        Hurt,     //受伤
+        HurtBack, //击退
+        HurtFloat,//击飞
+
+    }
 }

@@ -19,8 +19,16 @@ public class MMORPG_BaseObject_Player_State_Move : State<MMORPG_BaseObject_Playe
 
     public override void Enter(MMORPG_BaseObject_Player entity)
     {
-        //PC端
-        entity.AnimationStateChange(MMORPG_AnimationStateInfo.Run, true);
+
+        if (entity.isFightState)
+        {
+            entity.AnimationStateChange(MMORPG_AnimationStateInfo_Player.AttackRun, true);
+        }
+        else
+        {
+            entity.AnimationStateChange(MMORPG_AnimationStateInfo_Player.NormalRun, true);
+        }
+        
     }
     public override void Execute(MMORPG_BaseObject_Player entity)
     {

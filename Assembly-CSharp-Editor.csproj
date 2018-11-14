@@ -82,10 +82,10 @@
      <None Include="Assets\GameEngine\DialogFramwork\StreamingAssets\dialog.xml" />
      <None Include="Assets\FullFantasyGameSet\LowpolyToonForestWinter\shaders\DoublesidedCutout\AlphaTest-DiffuseBack.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>E:/LBYSourcesDic/自学/MagicAndMonster/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>E:/UnityProgram/githubs/MagicAndMonster/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="Assembly-UnityScript">
- <HintPath>E:/LBYSourcesDic/自学/MagicAndMonster/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>E:/UnityProgram/githubs/MagicAndMonster/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -112,10 +112,10 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
  </Reference>
  <Reference Include="EasyMVC">
- <HintPath>E:/LBYSourcesDic/自学/MagicAndMonster/Assets/GameEngine/UIFramwork/Plugins/EasyMVC.dll</HintPath>
+ <HintPath>E:/UnityProgram/githubs/MagicAndMonster/Assets/GameEngine/UIFramwork/Plugins/EasyMVC.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
- <HintPath>E:/LBYSourcesDic/自学/MagicAndMonster/Assets/GameEngine/UIFramwork/Plugins/LitJson.dll</HintPath>
+ <HintPath>E:/UnityProgram/githubs/MagicAndMonster/Assets/GameEngine/UIFramwork/Plugins/LitJson.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

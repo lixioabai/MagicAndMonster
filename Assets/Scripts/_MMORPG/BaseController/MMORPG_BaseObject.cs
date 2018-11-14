@@ -64,6 +64,13 @@ public class MMORPG_BaseObject : BaseGameEntity
 
     public bool AnimatorChanged = false;
 
+    /// <summary>
+    /// 战斗状态
+    /// </summary>
+    public bool isFightState = false;
+
+    public float ExitFightTime = 20;
+
 
     //---------------------------------------------------------------
     //攻击
@@ -191,9 +198,15 @@ public class MMORPG_BaseObject : BaseGameEntity
 
     public bool AnimationIsPlayingOver()
     {
-       
 
-        if (myAnimation[GetAnimationPlayingName()].normalizedTime >= 0.5f)
+        try
+        {
+            if (myAnimation[GetAnimationPlayingName()].normalizedTime >=1f)
+            {
+                return true;
+            }
+        }
+        catch
         {
             return true;
         }
@@ -322,6 +335,8 @@ public class MMORPG_BaseObject : BaseGameEntity
     {
        
     }
+
+ 
 
 
 

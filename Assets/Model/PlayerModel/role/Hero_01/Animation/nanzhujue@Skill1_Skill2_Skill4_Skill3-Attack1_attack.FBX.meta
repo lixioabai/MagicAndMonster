@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: fcefa99b21f97a24e9f97b140ea1d27d
 ModelImporter:
-  serializedVersion: 16
+  serializedVersion: 19
   fileIDToRecycleName:
     100000: Bip01
     100002: Bip01 Head
@@ -116,8 +116,8 @@ ModelImporter:
     400108: Bone06
     400110: Bone07
     6400000: //RootNode
-    7400000: Skill1-1
-    7400002: Skill2
+    7400000: SkillOne
+    7400002: SkillTwo
     7400004: Skill3-6
     7400006: Skill4
     7400008: attack
@@ -127,6 +127,7 @@ ModelImporter:
     7400016: Skill3-3
     7400018: Skill3-4
     7400020: Skill3-5
+    7400022: SkillThree
     9500000: //RootNode
     11100000: //RootNode
   materials:
@@ -136,17 +137,22 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    animationCompression: 3
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Skill1-1
+      name: SkillOne
       takeName: Take 001
       firstFrame: 3
       lastFrame: 20
@@ -155,6 +161,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -168,39 +175,39 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: .218425095
+      - time: 0.2184251
         functionName: OnSkillMoveStart
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 5
         intParameter: 0
         messageOptions: 0
-      - time: .235683963
+      - time: 0.23568396
         functionName: OnSkillOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 3
         messageOptions: 0
-      - time: .627467036
+      - time: 0.62746704
         functionName: OnSkillEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .64846307
+      - time: 0.6484631
         functionName: OnSkillMoveEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .820846975
+      - time: 0.820847
         functionName: OnSkillSlowStart
         data: 
         objectReferenceParameter: {instanceID: 0}
-        floatParameter: .600000024
+        floatParameter: 0.6
         intParameter: 0
         messageOptions: 0
       transformMask:
@@ -278,8 +285,9 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Skill2
+      name: SkillTwo
       takeName: Take 001
       firstFrame: 49
       lastFrame: 104
@@ -288,6 +296,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -301,42 +310,42 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: .28705886
+      - time: 0.28705886
         functionName: OnSkillSlowStart
         data: 
         objectReferenceParameter: {instanceID: 0}
-        floatParameter: .800000012
+        floatParameter: 0.8
         intParameter: 0
         messageOptions: 0
-      - time: .490860641
+      - time: 0.49086064
         functionName: OnSkillSlowEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .606442153
+      - time: 0.60644215
         functionName: OnSkillMoveStart
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 2
         intParameter: 0
         messageOptions: 0
-      - time: .61532104
+      - time: 0.61532104
         functionName: OnSkillOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .739615023
+      - time: 0.739615
         functionName: OnSkillMoveEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .806201577
+      - time: 0.8062016
         functionName: OnSkillEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -418,6 +427,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Skill3-6
       takeName: Take 001
@@ -428,6 +438,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -441,42 +452,42 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: .474036783
+      - time: 0.47403678
         functionName: OnSkillSlowStart
         data: 
         objectReferenceParameter: {instanceID: 0}
-        floatParameter: .800000012
+        floatParameter: 0.8
         intParameter: 0
         messageOptions: 0
-      - time: .668529809
+      - time: 0.6685298
         functionName: OnSkillMoveStart
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 1.5
         intParameter: 0
         messageOptions: 0
-      - time: .685656846
+      - time: 0.68565685
         functionName: OnSkillOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 2
         messageOptions: 0
-      - time: .703529358
+      - time: 0.70352936
         functionName: OnSkillSlowEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .868510962
+      - time: 0.86851096
         functionName: OnSkillMoveEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .880000114
+      - time: 0.8800001
         functionName: OnSkillEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -558,6 +569,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Skill4
       takeName: Take 001
@@ -568,6 +580,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -581,49 +594,49 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: .00927661173
+      - time: 0.009276612
         functionName: OnSkillPlayEff
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 5
         messageOptions: 0
-      - time: .393103451
+      - time: 0.39310345
         functionName: OnSkillSlowStart
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 1
         intParameter: 0
         messageOptions: 0
-      - time: .603448331
+      - time: 0.60344833
         functionName: OnSkillSlowEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .689655244
+      - time: 0.68965524
         functionName: OnSkillMoveStart
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 2
         intParameter: 0
         messageOptions: 0
-      - time: .757647038
+      - time: 0.75764704
         functionName: OnSkillOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 2
         messageOptions: 0
-      - time: .820235252
+      - time: 0.82023525
         functionName: OnSkillMoveEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .824000001
+      - time: 0.824
         functionName: OnSkillEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -705,6 +718,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: attack
       takeName: Take 001
@@ -715,6 +729,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -728,28 +743,28 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: .0439086892
+      - time: 0.04390869
         functionName: OnAttackMoveStart
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .353911787
+      - time: 0.3539118
         functionName: OnAttackOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 6
         messageOptions: 0
-      - time: .465357065
+      - time: 0.46535707
         functionName: OnAttackEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .534964263
+      - time: 0.53496426
         functionName: OnAttackMoveEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -831,6 +846,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Skill1-2
       takeName: Take 001
@@ -841,6 +857,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -854,35 +871,35 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: .123778515
+      - time: 0.123778515
         functionName: OnSkillSlowEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .208765209
+      - time: 0.20876521
         functionName: OnSkillMoveStart
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 8
         intParameter: 0
         messageOptions: 0
-      - time: .221291065
+      - time: 0.22129107
         functionName: OnSkillOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 4
         messageOptions: 0
-      - time: .522328079
+      - time: 0.5223281
         functionName: OnSkillMoveEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .53246069
+      - time: 0.5324607
         functionName: OnSkillEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -964,6 +981,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Skill3-1
       takeName: Take 001
@@ -974,6 +992,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -987,21 +1006,21 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: .688434899
+      - time: 0.6884349
         functionName: OnSkillOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 1
         messageOptions: 0
-      - time: .971766591
+      - time: 0.9717666
         functionName: OnSkillEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .983067989
+      - time: 0.983068
         functionName: OnBlurOn
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -1090,6 +1109,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Skill3-2
       takeName: Take 001
@@ -1100,6 +1120,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -1113,21 +1134,21 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: .667751968
+      - time: 0.66775197
         functionName: OnSkillOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 1
         messageOptions: 0
-      - time: .980331719
+      - time: 0.9803317
         functionName: OnBlurOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .983529091
+      - time: 0.9835291
         functionName: OnSkillEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -1216,6 +1237,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Skill3-3
       takeName: Take 001
@@ -1226,6 +1248,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -1239,21 +1262,21 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: .635179877
+      - time: 0.6351799
         functionName: OnSkillOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 1
         messageOptions: 0
-      - time: .981178045
+      - time: 0.98117805
         functionName: OnSkillEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .986818075
+      - time: 0.9868181
         functionName: OnBlurOn
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -1342,6 +1365,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Skill3-4
       takeName: Take 001
@@ -1352,6 +1376,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -1365,21 +1390,21 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: .654723823
+      - time: 0.6547238
         functionName: OnSkillOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 1
         messageOptions: 0
-      - time: .985883713
+      - time: 0.9858837
         functionName: OnSkillEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .988348484
+      - time: 0.9883485
         functionName: OnBlurOn
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -1468,6 +1493,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Skill3-5
       takeName: Take 001
@@ -1478,6 +1504,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -1491,21 +1518,21 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: .667752683
+      - time: 0.6677527
         functionName: OnSkillOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 1
         messageOptions: 0
-      - time: .985880852
+      - time: 0.98588085
         functionName: OnSkillEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .986431837
+      - time: 0.98643184
         functionName: OnBlurOn
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -1594,10 +1621,111 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SkillThree
+      takeName: Take 001
+      firstFrame: 183
+      lastFrame: 270
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bip02
+        weight: 1
+      - path: Bip02/Bip02 Footsteps
+        weight: 1
+      - path: Bip02/Bip02 Pelvis
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 L Thigh
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 L Thigh/Bip02 L Calf
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 L Thigh/Bip02 L Calf/Bip02 L Foot
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 L Thigh/Bip02 L Calf/Bip02 L Foot/Bip02 L Toe0
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 R Thigh
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 R Thigh/Bip02 R Calf
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 R Thigh/Bip02 R Calf/Bip02 R Foot
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 R Thigh/Bip02 R Calf/Bip02 R Foot/Bip02 R Toe0
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1/Bip02 L Clavicle
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1/Bip02 L Clavicle/Bip02 L
+          UpperArm
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1/Bip02 L Clavicle/Bip02 L
+          UpperArm/Bip02 L Forearm
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1/Bip02 L Clavicle/Bip02 L
+          UpperArm/Bip02 L Forearm/Bip02 L Hand
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1/Bip02 Neck
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1/Bip02 Neck/Bip02 Head
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1/Bip02 Neck/Bip02 Head/Bone06
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1/Bip02 Neck/Bip02 Head/Bone07
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1/Bip02 R Clavicle
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1/Bip02 R Clavicle/Bip02 R
+          UpperArm
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1/Bip02 R Clavicle/Bip02 R
+          UpperArm/Bip02 R Forearm
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1/Bip02 R Clavicle/Bip02 R
+          UpperArm/Bip02 R Forearm/Bip02 R Hand
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1/Bone01
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1/Bone01/Bone02
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1/Bone01/Bone02/Bone03
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1/Bone01/Bone02/Bone03/Bone04
+        weight: 1
+      - path: Bip02/Bip02 Pelvis/Bip02 Spine/Bip02 Spine1/Bone01/Bone02/Bone03/Bone04/Bone05
+        weight: 1
+      - path: Bip02/Bip02 Prop1
+        weight: 1
+      - path: Bip02/Bip02 Prop2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .00999999978
+    globalScale: 0.01
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -1605,30 +1733,35 @@ ModelImporter:
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
+    keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
-    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
     skeleton: []
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
+  humanoidOversampling: 1
   additionalBone: 0
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

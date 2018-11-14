@@ -22,14 +22,15 @@ public class MMORPG_BaseObject_AI_State_Attack : State<MMORPG_BaseObject_AI>
 
         entity.attackTime = 0;
         entity.AnimationStateChange(MMORPG_AnimationStateInfo.Attack, true);
+       
     }
 
     public override void Execute(MMORPG_BaseObject_AI entity)
     {
 
-      
-            //攻击中判断追击 //如果攻击时玩家移动则攻击完毕再判断追击
-            if (!entity.CheckAttackDistance())
+     
+        //攻击中判断追击 //如果攻击时玩家移动则攻击完毕再判断追击
+        if (!entity.CheckAttackDistance())
             {
                 if (entity.AllowAttack()&&!entity.myAnimation.IsPlaying(MMORPG_AnimationStateInfo.Attack))
                 {
@@ -48,11 +49,14 @@ public class MMORPG_BaseObject_AI_State_Attack : State<MMORPG_BaseObject_AI>
                     entity.AnimationStateChange(MMORPG_AnimationStateInfo.Attack, true);
                     if (entity.AnimationIsPlayingOver(MMORPG_AnimationStateInfo.Attack))
                     {
-                        entity.attackTime = 2;
+                    MessageDispatcher.Instance.DispatchMessage(0, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
+                    Debug.Log("攻击");
+                    entity.attackTime = 2;
                     }
-                }
-
+                 
             }
+
+        }
         
        
         //entity.AI_GetFSM().SetCurrentState(MMORPG_BaseObject_AI_State_Idle.Instance);
@@ -61,7 +65,8 @@ public class MMORPG_BaseObject_AI_State_Attack : State<MMORPG_BaseObject_AI>
     }
     public override void Exit(MMORPG_BaseObject_AI entity)
     {
-        Debug.Log("退出状态");
+        
+        Debug.Log("退出攻击状态");
     }
     public override bool OnMessage(MMORPG_BaseObject_AI entity, Telegram telegram)
     {

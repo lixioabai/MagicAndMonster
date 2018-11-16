@@ -38,17 +38,25 @@ public class MMORPG_BaseObject_Player_State_Global : State<MMORPG_BaseObject_Pla
                 return;
             entity.GetFSM().ChangeState(MMORPG_BaseObject_Player_State_Attack.Instance);
         }
+
+
+      
+
+
+
+
+
     }
     public override void Exit(MMORPG_BaseObject_Player entity)
     {
-
+        
     }
     public override bool OnMessage(MMORPG_BaseObject_Player entity, Telegram telegram)
     {
         Debug.Log("GetMessage");
         if (telegram.Msg == (int)EnumDefine.MessageType.Hurt)
         {
-            entity.GetFSM().ChangeState(MMORPG_BaseObject_Player_State_Hurt.Instance);
+           // entity.GetFSM().ChangeState(MMORPG_BaseObject_Player_State_Hurt.Instance);
             return true;
         }
         if (telegram.Msg == (int)EnumDefine.MessageType.HurtBack)

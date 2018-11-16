@@ -35,9 +35,13 @@ public class MMORPG_BaseObject_AI_State_Global : State<MMORPG_BaseObject_AI> {
     public override bool OnMessage(MMORPG_BaseObject_AI entity, Telegram telegram)
     {
         Debug.Log("GetMessage");
+        if (telegram.Msg == (int)EnumDefine.MessageType.Hurt)
+        {
+            entity.AI_GetFSM().ChangeState(MMORPG_BaseObject_AI_State_Hurt.Instance);
+            return true;
+        }
 
-       
-        
+
         return false;
     }
 }

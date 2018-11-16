@@ -59,6 +59,54 @@ public class MMORPG_BaseObject_Player_State_Idle : State<MMORPG_BaseObject_Playe
     public override void Execute(MMORPG_BaseObject_Player entity)
     {
       
+          
+
+
+        #region 自动打怪
+        //自动打怪
+        if (entity.isAutoAttack)
+        {
+
+
+            entity.GetMinDistancePlayer();
+            if (Vector3.Distance(entity.transform.position, entity.FightObject.transform.position) < entity.chaseDistance)
+            {
+                if (entity.CheckAttackDistance())
+                {
+                    entity.GetFSM().SetCurrentState(MMORPG_BaseObject_Player_State_Attack.Instance);
+                }
+                else
+                {
+
+                    entity.TurnTo(entity.FightObject);
+                    entity.AnimationStateChange(MMORPG_AnimationStateInfo_Player.AttackRun, true);
+                    entity.myCapCollider.SimpleMove((entity.FightObject.transform.position - entity.transform.position));
+                }
+            }
+            else
+            {
+                if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0 || entity.isET)
+                {
+
+                    entity.GetFSM().SetCurrentState(MMORPG_BaseObject_Player_State_Move.Instance);
+                }
+                else
+                {
+                    if (entity.isFightState)
+                    {
+                        entity.AnimationStateChange(MMORPG_AnimationStateInfo_Player.AttackIdle, true);
+                    }
+                    else
+                    {
+                        entity.AnimationStateChange(MMORPG_AnimationStateInfo_Player.NormalIdle, true);
+                    }
+                }
+            }
+
+        }
+        #endregion
+        else
+        {
             if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0 || entity.isET)
             {
 
@@ -74,8 +122,9 @@ public class MMORPG_BaseObject_Player_State_Idle : State<MMORPG_BaseObject_Playe
                 {
                     entity.AnimationStateChange(MMORPG_AnimationStateInfo_Player.NormalIdle, true);
                 }
+            }
         }
-       
+
 
     }
     public override void Exit(MMORPG_BaseObject_Player entity)

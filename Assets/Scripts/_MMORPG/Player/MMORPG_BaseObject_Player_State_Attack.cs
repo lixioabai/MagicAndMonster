@@ -26,21 +26,19 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
         {
             case 1:
                 entity.AnimationStateChange(MMORPG_AnimationStateInfo_Player.AttackOne, true); //单体
-
-                entity.GetMinDistancePlayer();
-                
-
-
-
+                AttackOne(entity);
                 break;
             case 2:
                 entity.AnimationStateChange(MMORPG_AnimationStateInfo_Player.AttackTwo, true); //单体
+                AttackOne(entity);
                 break;
             case 3:
                 entity.AnimationStateChange(MMORPG_AnimationStateInfo_Player.AttackThree, true); //AOE
+                AttackOne(entity);
                 break;
             case 4:
                 entity.AnimationStateChange(MMORPG_AnimationStateInfo_Player.AttackFour, true); //AOE
+                AttackOne(entity);
                 AttackIndex = 0;
                 break;
             default:
@@ -72,7 +70,58 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
     }
 
 
-   
+    #region 将攻击单独独立出来
+    //如果攻击目标为空 则遍历敌人集合 找到最近的敌人
+    //如果最近的敌人超出攻击范围，则朝最近的敌人方向移动
+    //在攻击范围内。攻击
+
+
+
+    /// <summary>
+    /// 攻击1判定
+    /// </summary>
+    private void AttackOne(MMORPG_BaseObject_Player entity)
+    {
+        if (entity.FightObject == null)
+        {
+            //没有敌人
+
+            if (!entity.CheckAttackDistance())
+            {
+                //不在攻击范围内 不判定
+                //移动至攻击目标位置
+                entity.TurnTo(entity.FightObject);
+
+
+            }
+            else
+            {
+                entity.transform.LookAt(entity.FightObject.transform.position);
+                //攻击
+                MessageDispatcher.Instance.DispatchMessage(0, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
+                Debug.Log("<Color=red>攻击消息发送</Color>");
+               
+            }
+        }
+        else
+        {
+            entity.transform.LookAt(entity.FightObject.transform.position);
+         
+            //攻击
+            MessageDispatcher.Instance.DispatchMessage(0, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
+            Debug.Log("<Color=red>攻击消息发送</Color>");
+
+        }
+    }
+
+    /// <summary>
+    /// 攻击2判定
+    /// </summary>
+    private void AttackTwo(MMORPG_BaseObject_Player entity)
+    {
+
+    }
+    #endregion
 
 
 }

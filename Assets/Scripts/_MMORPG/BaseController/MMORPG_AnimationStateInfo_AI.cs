@@ -1,15 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MMORPG_AnimationStateInfo_AI : MonoBehaviour {
+public class MMORPG_AnimationStateInfo_AI
+{
+    public static string Hurt = "Hit";
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

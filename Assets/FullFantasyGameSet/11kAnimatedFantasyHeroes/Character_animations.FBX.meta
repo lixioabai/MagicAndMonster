@@ -389,8 +389,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Hit
       takeName: Fantasy_01_Warrior_29_max2011
-      firstFrame: 490
-      lastFrame: 500
+      firstFrame: 483
+      lastFrame: 506
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

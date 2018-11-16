@@ -41,6 +41,8 @@ public class MMORPG_BaseObject_AI : MMORPG_BaseObject
 
     public override void Start()
     {
+        
+
         aIType = AIType.Enemy;
         attackTime = 0.5f;
         isBakcToBirth = false;
@@ -48,7 +50,6 @@ public class MMORPG_BaseObject_AI : MMORPG_BaseObject
 
         setTransform(transform);
         RefreshEnemyList();
-        m_ai_stateMachine = new StateMachine<MMORPG_BaseObject_AI>(this);
         m_ai_stateMachine = new StateMachine<MMORPG_BaseObject_AI>(this);
         m_ai_stateMachine.SetCurrentState(MMORPG_BaseObject_AI_State_Idle.Instance);
         m_ai_stateMachine.SetGlobalState(MMORPG_BaseObject_AI_State_Global.Instance);

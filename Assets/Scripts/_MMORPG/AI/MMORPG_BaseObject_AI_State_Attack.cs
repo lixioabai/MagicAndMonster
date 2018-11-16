@@ -54,9 +54,9 @@ public class MMORPG_BaseObject_AI_State_Attack : State<MMORPG_BaseObject_AI>
                     entity.attackTime = 2;
                     }
                  
-            }
+                }
 
-        }
+            }
         
        
         //entity.AI_GetFSM().SetCurrentState(MMORPG_BaseObject_AI_State_Idle.Instance);
@@ -76,4 +76,6 @@ public class MMORPG_BaseObject_AI_State_Attack : State<MMORPG_BaseObject_AI>
         }
         return false;
     }
+
+
 }

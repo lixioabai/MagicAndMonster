@@ -157,6 +157,7 @@
      <Compile Include="Assets\Scripts\_MMORPG\Buff\Up\MMORPG_Buff_Poison.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\EnumDefine.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\MMORPG_GlobalParmater.cs" />
+     <Compile Include="Assets\Scripts\_MMORPG\Player\Attack\PlayerArcher\MMORPG_PlayerNormalAttack_Arrow.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player_State_Attack.cs" />
      <Compile Include="Assets\Scripts\_MMORPG\Player\MMORPG_BaseObject_Player_State_Die.cs" />

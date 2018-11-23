@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Player>
 {
@@ -19,6 +20,7 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
 
     public override void Enter(MMORPG_BaseObject_Player entity)
     {
+
         
         AttackIndex++;
         Debug.Log("攻击顺序： "+ AttackIndex);
@@ -82,36 +84,43 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
     /// </summary>
     private void AttackOne(MMORPG_BaseObject_Player entity)
     {
+        //获取攻击目标
+ 
+        //根据各个英雄攻击距离和攻击方式不同需要分为近战和远战
+
+       
+        entity.GetMinDistancePlayer();
+
         if (entity.FightObject == null)
+            return;
+
+        float distance = Vector3.Distance(entity.transform.position, entity.FightObject.transform.position);
+        if (distance > entity.attackDistance)
         {
-            //没有敌人
+            return;
+        }
 
-            if (!entity.CheckAttackDistance())
+
+           entity.transform.LookAt(entity.FightObject.transform.position);
+            if (entity.myAnimation["AttackOne"].length > 0.5f)
             {
-                //不在攻击范围内 不判定
-                //移动至攻击目标位置
-                entity.TurnTo(entity.FightObject);
-
-
-            }
-            else
-            {
-                entity.transform.LookAt(entity.FightObject.transform.position);
-                //攻击
+                //近战攻击
                 MessageDispatcher.Instance.DispatchMessage(0, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
                 Debug.Log("<Color=red>攻击消息发送</Color>");
                
+                //远战攻击
+                //实例化 弓箭、魔法球
+                GameObject Arrow = Resources.Load<GameObject>("Arrow");
+                GameObject.Instantiate(Arrow, entity.transform.position, Quaternion.identity);
+                Arrow.GetComponent<MMORPG_PlayerNormalAttack_Arrow>().direction = entity.FightObject.transform.position;
+                    //近战攻击
+                    MessageDispatcher.Instance.DispatchMessage(0, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
+                    Debug.Log("<Color=red>远程攻击</Color>");
+                
             }
-        }
-        else
-        {
-            entity.transform.LookAt(entity.FightObject.transform.position);
-         
-            //攻击
-            MessageDispatcher.Instance.DispatchMessage(0, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
-            Debug.Log("<Color=red>攻击消息发送</Color>");
+           
 
-        }
+        
     }
 
     /// <summary>
@@ -119,6 +128,32 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
     /// </summary>
     private void AttackTwo(MMORPG_BaseObject_Player entity)
     {
+        List<GameObject> AttackList= entity.GetAoeAttackEnemy();
+
+        if (entity.myAnimation["AttackOne"].length > 0.5f)
+        {
+            for (int i = 0; i < AttackList.Count; i++)
+            {
+                //近战攻击
+                MessageDispatcher.Instance.DispatchMessage(0, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
+                Debug.Log("<Color=red>攻击消息发送</Color>");
+
+
+                //远战攻击
+                //实例化 弓箭、魔法球
+                GameObject Arrow = Resources.Load<GameObject>("Arrow");
+                GameObject.Instantiate(Arrow, entity.transform.position, Quaternion.identity);
+                Arrow.GetComponent<MMORPG_PlayerNormalAttack_Arrow>().direction = entity.FightObject.transform.position;
+                //近战攻击
+                MessageDispatcher.Instance.DispatchMessage(0, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
+                Debug.Log("<Color=red>远程攻击</Color>");
+
+            }
+           
+
+          
+
+        }
 
     }
     #endregion

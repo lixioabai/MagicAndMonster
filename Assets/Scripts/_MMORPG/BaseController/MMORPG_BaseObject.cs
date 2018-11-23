@@ -327,20 +327,100 @@ public class MMORPG_BaseObject : BaseGameEntity
     #region 战斗
 
 
+    /// <summary>
+    /// 得到离自己最近的敌人  单体伤害攻击（只打最近的敌人）
+    /// </summary>
+    /// <returns></returns>
+    public void GetMinDistancePlayer()
+    {
+        FightObject = null;
+        RefreshEnemyList();
+        GameObject attactObj = null;
+        float MinDistance = Mathf.Infinity;
+        for (int i = 0; i < m_enemys.Count; i++)
+        {
+            float currentDistance = Vector3.Distance(m_enemys[i].transform.position, transform.position);
+            if (currentDistance < MinDistance)
+            {
+                MinDistance = currentDistance;
+                attactObj = m_enemys[i];
+
+            }
+            FightObject = attactObj;
+            Debug.Log("获取最近的目标");
+        }
+
+    }
+
+
+
+
+
+
+    /// <summary>
+    /// 检查单体攻击距离
+    /// </summary>
+    public bool CheckAttackDistance()
+    {
+        GetMinDistancePlayer();
+        if (FightObject == null)
+        {
+            Debug.Log("没有目标");
+            return false;
+        }
+        else
+        {
+            float distance = Vector3.Distance(transform.position, FightObject.transform.position);
+            if (distance < attackDistance)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+    }
+
+
 
     /// <summary>
     /// 刷新敌人集合
     /// </summary>
-    public virtual void RefreshEnemyList()
+    public  void RefreshEnemyList()
     {
-       
+        
+        GameObject[] arr = null;
+        arr = GameObject.FindGameObjectsWithTag(GetEnemyTag());
+        m_enemys.Clear();
+        m_enemys = new List<GameObject>(arr);
     }
 
- 
 
+    /// <summary>
+    /// 刷新在攻击范围内离敌人集合
+    /// </summary>
+    public List<GameObject> GetAoeAttackEnemy()
+    {
+        
+        GameObject[] arr = null;
+        arr = GameObject.FindGameObjectsWithTag(GetEnemyTag());
+        m_enemys.Clear();
 
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (Vector3.Distance(arr[i].transform.position, transform.position) <= attackDistance)
+            {
+                if (!m_enemys.Contains(arr[i]))
+                {
+                    m_enemys.Add(arr[i]);
+                }
 
-
+            }
+        }
+        return m_enemys;
+    }
 
 
     #endregion
@@ -352,6 +432,7 @@ public class MMORPG_BaseObject : BaseGameEntity
     /// </summary>
     public void TurnTo(GameObject target)
     {
+        if (target == null) return;
         Debug.DrawLine(target.transform.position, this.transform.position, Color.yellow);
 
         //lock at target Player
@@ -375,8 +456,20 @@ public class MMORPG_BaseObject : BaseGameEntity
         myTransform.rotation,
         Quaternion.LookRotation(pos - transform.position),
         m_RotateSpeed * Time.deltaTime
-   );
+     );
 
+    }
+
+    public string GetEnemyTag()
+    {
+        if (transform.tag == "Player")
+        {
+            return "Enemy";
+        }
+        else
+        {
+            return "Player";
+        }
     }
 
     #endregion

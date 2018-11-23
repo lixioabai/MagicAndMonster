@@ -29,11 +29,11 @@ public class MMORPG_BaseObject_AI_State_Idle : State<MMORPG_BaseObject_AI>
             if (entity.m_enemys.Count <= 0)
             {
                 entity.RefreshEnemyList();
-                entity.FightObject = entity.GetMinDistancePlayer();
+                entity.GetMinDistancePlayer();
             }
             else
             {
-                entity.FightObject = entity.GetMinDistancePlayer();
+                entity.GetMinDistancePlayer();
             }
         }
        
@@ -42,7 +42,7 @@ public class MMORPG_BaseObject_AI_State_Idle : State<MMORPG_BaseObject_AI>
         if (entity.CheckChaseDistance())
         {
             //转向敌人
-            entity.TurnTo(entity.GetMinDistancePlayer());
+            entity.TurnTo(entity.FightObject);
             //进入追逐状态
             entity.AI_GetFSM().SetCurrentState(MMORPG_BaseObject_AI_State_Chase.Instance);
         }

@@ -67,9 +67,9 @@ public class MMORPG_BaseObject_Player_State_Idle : State<MMORPG_BaseObject_Playe
         if (entity.isAutoAttack)
         {
 
-
             entity.GetMinDistancePlayer();
-            if (Vector3.Distance(entity.transform.position, entity.FightObject.transform.position) < entity.chaseDistance)
+            float distance = Vector3.Distance(entity.transform.position, entity.FightObject.transform.position);
+            if (distance < entity.chaseDistance)
             {
                 if (entity.CheckAttackDistance())
                 {

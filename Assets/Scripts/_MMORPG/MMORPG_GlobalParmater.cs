@@ -6,6 +6,14 @@ using System.Collections;
 /// </summary>
 public class MMORPG_GlobalParmater
 {
+    #region 标签
+
+    public static string TAG_PLAYER = "Player";
+    public static string TAG_ENEMY = "Enemy";
+    #endregion
+
+
+
 
     #region 玩家
 
@@ -18,6 +26,8 @@ public class MMORPG_GlobalParmater
 
 
     #region 怪物
+
+
 
     #endregion
 }

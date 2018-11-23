@@ -77,79 +77,8 @@ public class MMORPG_BaseObject_AI : MMORPG_BaseObject
         return m_ai_stateMachine;
     }
 
-    /// <summary>
-    /// 刷新敌人集合
-    /// </summary>
-    public override void RefreshEnemyList()
-    {
-        base.RefreshEnemyList();
-        GameObject[] arr = null;
-        switch (aIType)
-        {
-            case AIType.Friend:
-                arr = GameObject.FindGameObjectsWithTag("Enemy");
-                break;
-            case AIType.Enemy:
-                arr = GameObject.FindGameObjectsWithTag("Player");
-                break;
-            case AIType.Middle:
-                break;
-            default:
-                break;
-        }
-        m_enemys.Clear();
-        m_enemys = new List<GameObject>(arr);
-    }
 
-
-    /// <summary>
-    /// 得到离自己最近的敌人
-    /// </summary>
-    /// <returns></returns>
-    public GameObject GetMinDistancePlayer()
-    {
-        if (isBakcToBirth) return null;
-        GameObject attactObj = null;
-        float MinDistance = Mathf.Infinity;
-        for (int i = 0; i < m_enemys.Count; i++)
-        {
-            float currentDistance = Vector3.Distance(m_enemys[i].transform.position, transform.position);
-            if (currentDistance < MinDistance)
-            {
-                MinDistance = currentDistance;
-                attactObj = m_enemys[i];
-
-            }
-        }
-        return attactObj;
-    }
-
-
-    #region AI战斗
-    /// <summary>
-    /// 检查攻击距离
-    /// </summary>
-    public bool CheckAttackDistance()
-    {
-        if (FightObject == null)
-        {
-            Debug.Log("没有目标");
-            return false;
-        }
-        else
-        {
-            float distance = Vector3.Distance(transform.position,FightObject.transform.position);
-            if (distance < attackDistance)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-       
-    }
+    #region 战斗
 
     /// <summary>
     /// 检查追击距离

@@ -26,14 +26,14 @@ public class MMORPG_BaseObject_AI_State_Chase : State<MMORPG_BaseObject_AI>
         //朝敌人方向移动
         //追逐敌人
         entity.AnimationStateChange(MMORPG_AnimationStateInfo.Run, true);
-        entity.myCapCollider.SimpleMove(entity.GetMinDistancePlayer().transform.position * entity.MoveSpeed);
+        entity.myCapCollider.SimpleMove(entity.FightObject.transform.position * entity.MoveSpeed);
 
     }
     public override void Execute(MMORPG_BaseObject_AI entity)
     {
         if (entity.FightObject == null)
         {
-            entity.FightObject = entity.GetMinDistancePlayer();
+            entity.GetMinDistancePlayer();
         }
 
         Debug.Log("追逐");

@@ -36,7 +36,7 @@ public class MMORPG_BaseObject_AI_State_Chase : State<MMORPG_BaseObject_AI>
             entity.GetMinDistancePlayer();
         }
 
-        Debug.Log("追逐");
+       // Debug.Log("追逐");
 
 
         if (entity.CheckBakcDistance())
@@ -62,7 +62,8 @@ public class MMORPG_BaseObject_AI_State_Chase : State<MMORPG_BaseObject_AI>
                     //追逐敌人
                     entity.TurnTo(entity.FightObject);
                     entity.AnimationStateChange(MMORPG_AnimationStateInfo.Run, true);
-                    entity.myCapCollider.SimpleMove((entity.FightObject.transform.position - entity.transform.position)*entity.MoveSpeed);
+                    Vector3 RandomPos = new Vector3(entity.FightObject.transform.position.x+Random.Range(0,2), entity.FightObject.transform.position.y, entity.FightObject.transform.position.z+Random.Range(0, 2));
+                    entity.myCapCollider.SimpleMove((RandomPos - entity.transform.position)*entity.MoveSpeed);
                 }
                 else
                 {

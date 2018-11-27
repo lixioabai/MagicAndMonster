@@ -107,15 +107,15 @@ ModelImporter:
     4300006: hero_1_0002_head
     4300008: hero_1_0002_weapon
     6400000: //RootNode
-    7400000: AttackStand
+    7400000: AttackIdle
     7400002: AttackWalk
     7400004: AttackRun
     7400006: Hurt
-    7400008: Hurt-b
-    7400010: Hurt-f
+    7400008: HurtBack
+    7400010: HurtFloat
     7400012: Death
     7400014: Rush
-    7400016: Die2
+    7400016: DeathWake
     7400018: WakeUp
     9500000: //RootNode
     11100000: //RootNode
@@ -146,7 +146,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: AttackStand
+      name: AttackIdle
       takeName: Take 001
       firstFrame: 10
       lastFrame: 50
@@ -570,7 +570,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Hurt-b
+      name: HurtBack
       takeName: Take 001
       firstFrame: 90
       lastFrame: 110
@@ -676,7 +676,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Hurt-f
+      name: HurtFloat
       takeName: Take 001
       firstFrame: 180
       lastFrame: 220
@@ -1008,7 +1008,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Die2
+      name: DeathWake
       takeName: Take 001
       firstFrame: 300
       lastFrame: 350

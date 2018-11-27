@@ -36,13 +36,13 @@ public class MMORPG_BaseObject_Player_State_Move : State<MMORPG_BaseObject_Playe
         if (entity.AnimationIsPlayingOver())
         {
             entity.GetFSM().SetCurrentState(MMORPG_BaseObject_Player_State_Idle.Instance);
-            Debug.Log("去执行待机");
+           // Debug.Log("去执行待机");
         }
        
     }
     public override void Exit(MMORPG_BaseObject_Player entity)
     {
-        Debug.Log("退出状态");
+       // Debug.Log("退出状态");
     }
     public override bool OnMessage(MMORPG_BaseObject_Player entity, Telegram telegram)
     {

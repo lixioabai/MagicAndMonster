@@ -116,12 +116,12 @@ ModelImporter:
     400108: Bone29
     400110: Bone30
     6400000: //RootNode
-    7400000: AttackStand
+    7400000: AttackIdle
     7400002: AttackWalk
     7400004: AttackRun
     7400006: Hurt
-    7400008: Hurt-b
-    7400010: Hurt-f
+    7400008: HurtBack
+    7400010: HurtFloat
     7400012: Death
     9500000: //RootNode
     11100000: //RootNode
@@ -147,7 +147,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: AttackStand
+      name: AttackIdle
       takeName: Take 001
       firstFrame: 10
       lastFrame: 50
@@ -723,7 +723,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Hurt-b
+      name: HurtBack
       takeName: Take 001
       firstFrame: 160
       lastFrame: 180
@@ -867,7 +867,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Hurt-f
+      name: HurtFloat
       takeName: Take 001
       firstFrame: 190
       lastFrame: 230

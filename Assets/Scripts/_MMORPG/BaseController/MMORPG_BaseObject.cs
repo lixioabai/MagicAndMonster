@@ -362,7 +362,7 @@ public class MMORPG_BaseObject : BaseGameEntity
     /// </summary>
     public bool CheckAttackDistance()
     {
-        GetMinDistancePlayer();
+       // GetMinDistancePlayer();
         if (FightObject == null)
         {
             Debug.Log("没有目标");

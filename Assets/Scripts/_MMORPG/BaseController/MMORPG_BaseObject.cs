@@ -104,7 +104,15 @@ public class MMORPG_BaseObject : BaseGameEntity
     /// </summary>
     public float MoveSpeed=10;
 
+    /// <summary>
+    /// 出生点
+    /// </summary>
     public Vector3 birthPos;
+
+    /// <summary>
+    /// 攻击特效位置
+    /// </summary>
+    public Transform attackPos;
 
     #endregion
 
@@ -115,6 +123,7 @@ public class MMORPG_BaseObject : BaseGameEntity
         myAnimator = GetComponent<Animator>();
         myAnimation = GetComponent<Animation>();
         myCapCollider = GetComponent<CharacterController>();
+        attackPos = transform.FindChild("AttackPos").GetComponent<Transform>();
     }
     public virtual void Start()
     {

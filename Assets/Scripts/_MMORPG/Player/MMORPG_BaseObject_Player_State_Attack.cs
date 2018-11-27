@@ -32,7 +32,7 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
                 break;
             case 2:
                 entity.AnimationStateChange(MMORPG_AnimationStateInfo_Player.AttackTwo, true); //单体
-                AttackOne(entity);
+                AttackTwo(entity);
                 break;
             case 3:
                 entity.AnimationStateChange(MMORPG_AnimationStateInfo_Player.AttackThree, true); //AOE
@@ -104,17 +104,42 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
            entity.transform.LookAt(entity.FightObject.transform.position);
             if (entity.myAnimation["AttackOne"].length > 0.5f)
             {
-                //近战攻击
-                MessageDispatcher.Instance.DispatchMessage(0, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
-                //Debug.Log("<Color=red>攻击消息发送</Color>");
-               
-                //远战攻击
-                //实例化 弓箭、魔法球
-                GameObject Arrow = Resources.Load<GameObject>("Arrow");
-                GameObject go= GameObject.Instantiate(Arrow, entity.transform.position, Quaternion.identity)as GameObject;
 
-                go.GetComponent<MMORPG_PlayerNormalAttack_Arrow>().target = entity.FightObject;
-                Debug.Log(entity.FightObject+"<Color=yellow>??</Color>");
+            switch (entity.playerType)
+            {
+                case MMORPG_BaseObject_Player.PlayerType.None:
+                    break;
+                case MMORPG_BaseObject_Player.PlayerType.Sword:
+                    //近战攻击
+                    //实例化特效
+                    GameObject Effect = Resources.Load<GameObject>("Effect/Sword/Boy_Attack_01");
+                    GameObject effect = GameObject.Instantiate(Effect, entity.attackPos.position,entity.transform.rotation) as GameObject;
+                   
+                    Debug.Log("生成特校");
+                    break;
+                case MMORPG_BaseObject_Player.PlayerType.Magic:
+                    //远战攻击
+                    //实例化 弓箭、魔法球
+                    GameObject Magic = Resources.Load<GameObject>("Arrow");
+                    GameObject magic = GameObject.Instantiate(Magic, entity.transform.position, Quaternion.identity) as GameObject;
+                    magic.GetComponent<MMORPG_PlayerNormalAttack_Arrow>().target = entity.FightObject;
+                    break;
+                case MMORPG_BaseObject_Player.PlayerType.Assassin:
+                    //近战攻击
+                    //实例化特效
+                    break;
+                case MMORPG_BaseObject_Player.PlayerType.Archer:
+                    //远战攻击
+                    //实例化 弓箭、魔法球
+                    GameObject Arrow = Resources.Load<GameObject>("Arrow");
+                    GameObject arrow = GameObject.Instantiate(Arrow, entity.transform.position, Quaternion.identity) as GameObject;
+                    arrow.GetComponent<MMORPG_PlayerNormalAttack_Arrow>().target = entity.FightObject;
+                    break;
+                default:
+                    break;
+            }
+
+               
             //近战攻击
                 MessageDispatcher.Instance.DispatchMessage(0, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
                 Debug.Log("<Color=red>远程攻击</Color>");
@@ -132,22 +157,46 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
     {
         List<GameObject> AttackList= entity.GetAoeAttackEnemy();
 
-        if (entity.myAnimation["AttackOne"].length > 0.5f)
+        if (entity.myAnimation["AttackTwo"].length > 0.5f)
         {
             for (int i = 0; i < AttackList.Count; i++)
             {
-                //近战攻击
-                MessageDispatcher.Instance.DispatchMessage(0, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
-                Debug.Log("<Color=red>攻击消息发送</Color>");
+                switch (entity.playerType)
+                {
+                    case MMORPG_BaseObject_Player.PlayerType.None:
+                        break;
+                    case MMORPG_BaseObject_Player.PlayerType.Sword:
+                        //近战攻击
+                        //实例化特效
+                        GameObject Effect = Resources.Load<GameObject>("Effect/Sword/Boy_Attack_02");
+                        GameObject effect = GameObject.Instantiate(Effect, entity.attackPos.position, entity.transform.rotation) as GameObject;
+
+                        Debug.Log("生成特校");
+                        break;
+                    case MMORPG_BaseObject_Player.PlayerType.Magic:
+                        //远战攻击
+                        //实例化 弓箭、魔法球
+                        GameObject Magic = Resources.Load<GameObject>("Arrow");
+                        GameObject magic = GameObject.Instantiate(Magic, entity.transform.position, Quaternion.identity) as GameObject;
+                        magic.GetComponent<MMORPG_PlayerNormalAttack_Arrow>().target = entity.FightObject;
+                        break;
+                    case MMORPG_BaseObject_Player.PlayerType.Assassin:
+                        //近战攻击
+                        //实例化特效
+                        break;
+                    case MMORPG_BaseObject_Player.PlayerType.Archer:
+                        //远战攻击
+                        //实例化 弓箭、魔法球
+                        GameObject Arrow = Resources.Load<GameObject>("Arrow");
+                        GameObject arrow = GameObject.Instantiate(Arrow, entity.transform.position, Quaternion.identity) as GameObject;
+                        arrow.GetComponent<MMORPG_PlayerNormalAttack_Arrow>().target = entity.FightObject;
+                        break;
+                    default:
+                        break;
+                }
 
 
-                //远战攻击
-                //实例化 弓箭、魔法球
-                GameObject Arrow = Resources.Load<GameObject>("Arrow");
-                GameObject.Instantiate(Arrow, entity.transform.position, Quaternion.identity);
-                Arrow.GetComponent<MMORPG_PlayerNormalAttack_Arrow>().target = entity.FightObject;
-                //近战攻击
-                MessageDispatcher.Instance.DispatchMessage(0, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
+                MessageDispatcher.Instance.DispatchMessage(0, entity.transform, AttackList[i].transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
                 Debug.Log("<Color=red>远程攻击</Color>");
 
             }

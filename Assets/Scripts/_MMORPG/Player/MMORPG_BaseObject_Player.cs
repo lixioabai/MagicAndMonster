@@ -4,6 +4,29 @@ using System.Collections.Generic;
 
 public class MMORPG_BaseObject_Player : MMORPG_BaseObject
 {
+    public enum PlayerType
+    {
+        None,
+        /// <summary>
+        /// 战士
+        /// </summary>
+        Sword,
+        /// <summary>
+        /// 法师
+        /// </summary>
+        Magic,
+        /// <summary>
+        /// 刺客
+        /// </summary>
+        Assassin,
+        /// <summary>
+        /// 弓箭手
+        /// </summary>
+        Archer
+    }
+
+
+
     /// <summary>
     /// 状态机
     /// </summary>
@@ -18,6 +41,10 @@ public class MMORPG_BaseObject_Player : MMORPG_BaseObject
     /// 自动打怪
     /// </summary>
     public bool isAutoAttack;
+
+    public PlayerType playerType;
+
+
 
     public override void Start()
     {

@@ -80,6 +80,7 @@
      <None Include="Assets\FullFantasyGameSet\FantasyWeaponsSet\Documentation.txt" />
      <None Include="Assets\GameEngine\GameFromwork\Resources\LocalLanguage\Chinese.txt" />
      <None Include="Assets\GameEngine\DialogFramwork\StreamingAssets\dialog.xml" />
+     <None Include="Assets\IGSoft_Resources\Projects\1 Project\ToolResources\EffectShader\FXMaker_Mask Alpha Blended Tint.shader" />
      <None Include="Assets\FullFantasyGameSet\LowpolyToonForestWinter\shaders\DoublesidedCutout\AlphaTest-DiffuseBack.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>E:/UnityProgram/githubs/MagicAndMonster/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>

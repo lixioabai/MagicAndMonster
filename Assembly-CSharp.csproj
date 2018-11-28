@@ -45,6 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\EasyPoorManager\Scripts\DelayDeletePoorObject.cs" />
+     <Compile Include="Assets\EasyPoorManager\Scripts\ObjectPoor.cs" />
+     <Compile Include="Assets\EasyPoorManager\Scripts\TestPool.cs" />
      <Compile Include="Assets\EasyTouch\Example\C# Example\Example for EasyButton\Bullet.cs" />
      <Compile Include="Assets\EasyTouch\Example\C# Example\Example for EasyButton\ETPlayer.cs" />
      <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyJoystick\Example-thirdPerson_DirectEventMode\JoystickEvent.cs" />

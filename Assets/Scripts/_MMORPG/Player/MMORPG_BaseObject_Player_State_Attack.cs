@@ -113,8 +113,9 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
                     //近战攻击
                     //实例化特效
                     GameObject Effect = Resources.Load<GameObject>("Effect/Sword/Boy_Attack_01");
-                    GameObject effect = GameObject.Instantiate(Effect, entity.attackPos.position,entity.transform.rotation) as GameObject;
-                   
+                   // GameObject effect = GameObject.Instantiate(Effect, entity.attackPos.position,entity.transform.rotation) as GameObject;
+                    ObjectPoor.Instance().Create(Effect, entity.attackPos.position, Quaternion.identity);
+
                     Debug.Log("生成特校");
                     break;
                 case MMORPG_BaseObject_Player.PlayerType.Magic:
@@ -169,8 +170,8 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
                         //近战攻击
                         //实例化特效
                         GameObject Effect = Resources.Load<GameObject>("Effect/Sword/Boy_Attack_02");
-                        GameObject effect = GameObject.Instantiate(Effect, entity.attackPos.position, entity.transform.rotation) as GameObject;
-
+                        // GameObject effect = GameObject.Instantiate(Effect, entity.attackPos.position,entity.transform.rotation) as GameObject;
+                        ObjectPoor.Instance().Create(Effect, entity.attackPos.position, Quaternion.identity);
                         Debug.Log("生成特校");
                         break;
                     case MMORPG_BaseObject_Player.PlayerType.Magic:

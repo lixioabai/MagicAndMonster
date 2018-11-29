@@ -72,12 +72,12 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
     }
 
 
+
+
     #region 将攻击单独独立出来
     //如果攻击目标为空 则遍历敌人集合 找到最近的敌人
     //如果最近的敌人超出攻击范围，则朝最近的敌人方向移动
     //在攻击范围内。攻击
-
-
 
     /// <summary>
     /// 攻击1判定
@@ -88,21 +88,26 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
  
         //根据各个英雄攻击距离和攻击方式不同需要分为近战和远战
 
-       
-        entity.GetMinDistancePlayer();
-
+ 
         if (entity.FightObject == null)
-            return;
-
-        float distance = Vector3.Distance(entity.transform.position, entity.FightObject.transform.position);
-        if (distance > entity.attackDistance)
         {
-            return;
+            entity.GetMinDistancePlayer();
         }
 
+        //float distance = Vector3.Distance(entity.transform.position, entity.FightObject.transform.position);
 
-           entity.transform.LookAt(entity.FightObject.transform.position);
-            if (entity.myAnimation["AttackOne"].length > 0.5f)
+        //if (distance > entity.attackDistance)
+        //{
+        //    return;
+        //}
+
+        if (entity.CheckAttackDistance())
+        {
+            //攻击范围内
+            entity.transform.LookAt(entity.FightObject.transform.position);
+        }
+
+            if (entity.myAnimation["AttackOne"].length > 0.7f)
             {
 
             switch (entity.playerType)
@@ -113,17 +118,22 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
                     //近战攻击
                     //实例化特效
                     GameObject Effect = Resources.Load<GameObject>("Effect/Sword/Boy_Attack_01");
-                   // GameObject effect = GameObject.Instantiate(Effect, entity.attackPos.position,entity.transform.rotation) as GameObject;
-                    ObjectPoor.Instance().Create(Effect, entity.attackPos.position, Quaternion.identity);
+                    ObjectPoor.Instance().Create(Effect, entity.attackPos.position, entity.transform.rotation);
 
-                    Debug.Log("生成特校");
                     break;
                 case MMORPG_BaseObject_Player.PlayerType.Magic:
                     //远战攻击
                     //实例化 弓箭、魔法球
-                    GameObject Magic = Resources.Load<GameObject>("Arrow");
-                    GameObject magic = GameObject.Instantiate(Magic, entity.transform.position, Quaternion.identity) as GameObject;
-                    magic.GetComponent<MMORPG_PlayerNormalAttack_Arrow>().target = entity.FightObject;
+                    GameObject Magic = Resources.Load<GameObject>("Effect/Magic/MagicAttack01");
+                    if (entity.CheckAttackDistance())
+                    {
+                        ObjectPoor.Instance().Create(Magic, entity.attackPos.position, entity.transform.rotation, entity.FightObject);
+                    }
+                    else
+                    {
+                        ObjectPoor.Instance().Create(Magic, entity.attackPos.position, entity.transform.rotation);
+                    }
+                    
                     break;
                 case MMORPG_BaseObject_Player.PlayerType.Assassin:
                     //近战攻击
@@ -140,10 +150,10 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
                     break;
             }
 
-               
-            //近战攻击
-                MessageDispatcher.Instance.DispatchMessage(0, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
-                Debug.Log("<Color=red>远程攻击</Color>");
+           
+            //发送伤害消息
+            MessageDispatcher.Instance.DispatchMessage(0.5f, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
+            Debug.Log("<Color=red>远程攻击</Color>");
                 
             }
            
@@ -151,11 +161,13 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
         
     }
 
+
     /// <summary>
     /// 攻击2判定
     /// </summary>
     private void AttackTwo(MMORPG_BaseObject_Player entity)
     {
+
         List<GameObject> AttackList= entity.GetAoeAttackEnemy();
 
         if (entity.myAnimation["AttackTwo"].length > 0.5f)
@@ -169,17 +181,25 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
                     case MMORPG_BaseObject_Player.PlayerType.Sword:
                         //近战攻击
                         //实例化特效
+                        
                         GameObject Effect = Resources.Load<GameObject>("Effect/Sword/Boy_Attack_02");
-                        // GameObject effect = GameObject.Instantiate(Effect, entity.attackPos.position,entity.transform.rotation) as GameObject;
-                        ObjectPoor.Instance().Create(Effect, entity.attackPos.position, Quaternion.identity);
+                        ObjectPoor.Instance().Create(Effect, entity.attackPos.position, entity.transform.rotation);
                         Debug.Log("生成特校");
                         break;
                     case MMORPG_BaseObject_Player.PlayerType.Magic:
                         //远战攻击
                         //实例化 弓箭、魔法球
-                        GameObject Magic = Resources.Load<GameObject>("Arrow");
-                        GameObject magic = GameObject.Instantiate(Magic, entity.transform.position, Quaternion.identity) as GameObject;
-                        magic.GetComponent<MMORPG_PlayerNormalAttack_Arrow>().target = entity.FightObject;
+                        GameObject Magic = Resources.Load<GameObject>("Effect/Magic/MagicAttack01");
+                        float distance = Vector3.Distance(entity.transform.position, AttackList[i].transform.position);
+                        if (distance > entity.attackDistance)
+                        {
+                            ObjectPoor.Instance().Create(Magic, entity.attackPos.position, entity.transform.rotation,null);
+                        }
+                        else
+                        {
+                            ObjectPoor.Instance().Create(Magic, entity.attackPos.position, entity.transform.rotation, AttackList[i]);
+                        }
+                       
                         break;
                     case MMORPG_BaseObject_Player.PlayerType.Assassin:
                         //近战攻击
@@ -197,7 +217,7 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
                 }
 
 
-                MessageDispatcher.Instance.DispatchMessage(0, entity.transform, AttackList[i].transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
+                MessageDispatcher.Instance.DispatchMessage(0.5f, entity.transform, AttackList[i].transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
                 Debug.Log("<Color=red>远程攻击</Color>");
 
             }

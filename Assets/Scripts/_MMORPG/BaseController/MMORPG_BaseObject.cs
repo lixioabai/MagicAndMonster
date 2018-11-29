@@ -358,6 +358,7 @@ public class MMORPG_BaseObject : BaseGameEntity
             FightObject = attactObj;
             Debug.Log("获取最近的目标");
         }
+ 
 
     }
 

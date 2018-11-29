@@ -8,7 +8,7 @@ public class MMORPG_PlayerNormalAttack_Arrow : MonoBehaviour {
 
     public Vector3 direction;
     public GameObject target;
-
+    
 
     void Start ()
     {
@@ -22,7 +22,7 @@ public class MMORPG_PlayerNormalAttack_Arrow : MonoBehaviour {
     {
         if (target == null)
         {
-            return;
+            transform.Translate(transform.forward);
         }
         else
         {

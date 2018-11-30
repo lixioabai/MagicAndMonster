@@ -29,7 +29,7 @@ public class Player_GlobalState : State<Player>
     }
     public override bool OnMessage(Player entity, Telegram telegram)
     {
-        NewBuff(telegram.buff,entity);
+        
         if (entity.mymotor.IsTouchingGround)
         {
             if (entity.isPasive)

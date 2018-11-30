@@ -266,11 +266,11 @@ public class SkillEffect : MonoBehaviour
             {
                 if (Skillinfo == null)
                 {
-                    MessageDispatcher.Instance.DispatchMessage(0, this.transform, o.transform, (int)skill[Camb].Message, EntityManager.Instance.GetEntityFromTransform(this.transform), PlayerProperty.Attack1, Buff.Null);
+                    MessageDispatcher.Instance.DispatchMessage(0, this.transform, o.transform, (int)skill[Camb].Message, EntityManager.Instance.GetEntityFromTransform(this.transform), PlayerProperty.Attack1);
                 }
                 else
                 {
-                    MessageDispatcher.Instance.DispatchMessage(0, this.transform, o.transform, (int)skill[Camb].Message, EntityManager.Instance.GetEntityFromTransform(this.transform), Skillinfo.hitnum, Skillinfo.buff);
+                    MessageDispatcher.Instance.DispatchMessage(0, this.transform, o.transform, (int)skill[Camb].Message, EntityManager.Instance.GetEntityFromTransform(this.transform), Skillinfo.hitnum);
                 }
             }
         }
@@ -301,7 +301,7 @@ public class SkillEffect : MonoBehaviour
     {
         if (skills.UseReturn && enemys.Count == 0)      //做投技时用于返回到初始状态
         {
-            MessageDispatcher.Instance.DispatchMessage(0, this.transform, GameObject.FindGameObjectWithTag("Player").transform, (int)MessagesType.Player_Idle, EntityManager.Instance.GetEntityFromTransform(this.transform), 1f, Buff.Null);
+            MessageDispatcher.Instance.DispatchMessage(0, this.transform, GameObject.FindGameObjectWithTag("Player").transform, (int)MessagesType.Player_Idle, EntityManager.Instance.GetEntityFromTransform(this.transform), 1f);
             ChangerCollider(false);
             Destroy(this.gameObject, 0.2f);
         }
@@ -315,11 +315,11 @@ public class SkillEffect : MonoBehaviour
                 }
                 if (Skillinfo == null)
                 {
-                    MessageDispatcher.Instance.DispatchMessage(0, this.transform, o.transform, (int)skills.Message, EntityManager.Instance.GetEntityFromTransform(this.transform), PlayerProperty.Attack1, Buff.Null);
+                    MessageDispatcher.Instance.DispatchMessage(0, this.transform, o.transform, (int)skills.Message, EntityManager.Instance.GetEntityFromTransform(this.transform), PlayerProperty.Attack1);
                 }
                 else
                 {
-                    MessageDispatcher.Instance.DispatchMessage(0, this.transform, o.transform, (int)skills.Message, EntityManager.Instance.GetEntityFromTransform(this.transform), Skillinfo.hitnum, Skillinfo.buff);
+                    MessageDispatcher.Instance.DispatchMessage(0, this.transform, o.transform, (int)skills.Message, EntityManager.Instance.GetEntityFromTransform(this.transform), Skillinfo.hitnum);
                 }
                 //传递消息，造成打击效果
                 Vector3 dir = GameObject.FindGameObjectWithTag("player").transform.TransformPoint(skills.ForceE.Direction);
@@ -391,11 +391,11 @@ public class SkillEffect : MonoBehaviour
                 }
                     if (Skillinfo == null)
                     {
-                        MessageDispatcher.Instance.DispatchMessage(0, this.transform, other.transform, (int)skill.First<SkillHit>().Message, EntityManager.Instance.GetEntityFromTransform(this.transform), PlayerProperty.Attack1, Buff.Null);
+                        MessageDispatcher.Instance.DispatchMessage(0, this.transform, other.transform, (int)skill.First<SkillHit>().Message, EntityManager.Instance.GetEntityFromTransform(this.transform), PlayerProperty.Attack1);
                     }
                     else
                     {
-                        MessageDispatcher.Instance.DispatchMessage(0, this.transform, other.transform, (int)skill.First<SkillHit>().Message, EntityManager.Instance.GetEntityFromTransform(this.transform), Skillinfo.hitnum, Skillinfo.buff);
+                        MessageDispatcher.Instance.DispatchMessage(0, this.transform, other.transform, (int)skill.First<SkillHit>().Message, EntityManager.Instance.GetEntityFromTransform(this.transform), Skillinfo.hitnum);
                     }
                 Destroy(this.gameObject);
             }

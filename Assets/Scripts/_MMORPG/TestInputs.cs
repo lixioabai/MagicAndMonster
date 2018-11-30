@@ -13,7 +13,7 @@ public class TestInputs : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            MessageDispatcher.Instance.DispatchMessage(0, transform,transform, (int)MessagesType.Player_SkillQ, EntityManager.Instance.GetEntityFromTransform(transform), 1f, Buff.Null);
+            MessageDispatcher.Instance.DispatchMessage(0, transform,transform, (int)MessagesType.Player_SkillQ, EntityManager.Instance.GetEntityFromTransform(transform), 1f);
         }
 
 	}

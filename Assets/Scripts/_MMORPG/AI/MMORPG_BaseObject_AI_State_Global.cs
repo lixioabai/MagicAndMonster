@@ -34,13 +34,33 @@ public class MMORPG_BaseObject_AI_State_Global : State<MMORPG_BaseObject_AI> {
     }
     public override bool OnMessage(MMORPG_BaseObject_AI entity, Telegram telegram)
     {
-        Debug.Log("GetMessage");
+
+    #region Buff 判断
+            if (telegram.bufftype != EnumDefine.BuffType.None)
+            {
+                entity.AddBuff(telegram.bufftype, telegram.bufftime, telegram.buffvalue);
+            }
+            if (telegram.debufftype != EnumDefine.DeBuffType.None)
+            {
+                entity.AddDeBuff(telegram.debufftype, telegram.bufftime, telegram.buffvalue);
+            }
+    #endregion
+
+       
         if (telegram.Msg == (int)EnumDefine.MessageType.Hurt)
         {
+            //掉血
             entity.AI_GetFSM().ChangeState(MMORPG_BaseObject_AI_State_Hurt.Instance);
             return true;
         }
 
+        if (telegram.Msg == (int)EnumDefine.MessageType.NormalHurt)
+        {
+           //掉血
+            return true;
+        }
+
+      
 
         return false;
     }

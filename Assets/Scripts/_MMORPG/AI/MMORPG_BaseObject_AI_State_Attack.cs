@@ -49,7 +49,7 @@ public class MMORPG_BaseObject_AI_State_Attack : State<MMORPG_BaseObject_AI>
                     entity.AnimationStateChange(MMORPG_AnimationStateInfo.Attack, true);
                     if (entity.AnimationIsPlayingOver(MMORPG_AnimationStateInfo.Attack))
                     {
-                    MessageDispatcher.Instance.DispatchMessage(0, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
+                    MessageDispatcher.Instance.DispatchMessage(0, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f);
                     Debug.Log("攻击");
                     entity.attackTime = 2;
                     }

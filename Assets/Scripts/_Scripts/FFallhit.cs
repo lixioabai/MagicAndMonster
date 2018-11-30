@@ -23,7 +23,7 @@ public class FFallhit : MonoBehaviour {
         {
             if (other.tag == "Player")
             {
-                MessageDispatcher.Instance.DispatchMessage(0, this.transform, other.transform, (int)MessagesType.Msg_BeingUpForced_Fall, EntityManager.Instance.GetEntityFromTransform(this.transform), 10f, Buff.Burnt);
+                MessageDispatcher.Instance.DispatchMessage(0, this.transform, other.transform, (int)MessagesType.Msg_BeingUpForced_Fall, EntityManager.Instance.GetEntityFromTransform(this.transform), 10f);
                 canhit = false;
             }
         }

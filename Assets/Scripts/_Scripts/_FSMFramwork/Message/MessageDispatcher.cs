@@ -11,10 +11,13 @@ public class Telegram
     public Transform ReceiverTrans;     // 接受者
     public int Msg;                     // 消息类型（一个枚举值）
     public float hurt;                  //伤害值
-    public Buff buff;                  //buff
+    public EnumDefine.DeBuffType debufftype;  //debuff
+    public EnumDefine.BuffType bufftype;     //buff
+    public float buffvalue;                  //buff值
+    public float bufftime;                   //buff作用时间
     public float DispatchTime;          // 延迟时间
     public MonoBehaviour _Behaviour;    // 绑在游戏对象上的脚本里的继承自BaseGameEntity的类
-    public Telegram(float time, Transform senderTrans, Transform receiverTrans, int msg, MonoBehaviour mb,float hurt1,Buff buff1)
+    public Telegram(float time, Transform senderTrans, Transform receiverTrans, int msg, MonoBehaviour mb,float hurt1,EnumDefine.BuffType buff,float bfvalue,float bftime)
     {
         DispatchTime = time;
         SenderTrans = senderTrans;
@@ -22,8 +25,39 @@ public class Telegram
         Msg = msg;
         _Behaviour = mb;
         hurt = hurt1;
-        buff = buff1;
+        bufftype = buff;
+        buffvalue = bfvalue;
+        bufftime = bftime;
+        debufftype = EnumDefine.DeBuffType.None;
     }
+
+    public Telegram(float time, Transform senderTrans, Transform receiverTrans, int msg, MonoBehaviour mb, float hurt1, EnumDefine.DeBuffType debuff, float bfvalue, float bftime)
+    {
+        DispatchTime = time;
+        SenderTrans = senderTrans;
+        ReceiverTrans = receiverTrans;
+        Msg = msg;
+        _Behaviour = mb;
+        hurt = hurt1;
+        debufftype = debuff;
+        buffvalue = bfvalue;
+        bufftime = bftime;
+        bufftype = EnumDefine.BuffType.None;
+    }
+
+    public Telegram(float time, Transform senderTrans, Transform receiverTrans, int msg, MonoBehaviour mb, float hurt1)
+    {
+        DispatchTime = time;
+        SenderTrans = senderTrans;
+        ReceiverTrans = receiverTrans;
+        Msg = msg;
+        _Behaviour = mb;
+        hurt = hurt1;
+        debufftype = EnumDefine.DeBuffType.None;
+        bufftype = EnumDefine.BuffType.None;
+    }
+
+
 }
 /// <summary>
 /// 该类负责实体之间消息的传递
@@ -52,11 +86,11 @@ public class MessageDispatcher
     /// <param name="receiverTrans">消息接受者</param>
     /// <param name="msg">消息的类型，由一个枚举值转化而来</param>
     /// <param name="_mb">当前游戏实体（就是挂在目标游戏物体上的相应脚本）</param>
-    public void DispatchMessage(float delay, Transform senderTrans, Transform receiverTrans, int msg, MonoBehaviour _mb,float hurt1,Buff buff1)
+    public void DispatchMessage(float delay, Transform senderTrans, Transform receiverTrans, int msg, MonoBehaviour _mb,float hurt1,EnumDefine.BuffType buff,float bfvalue,float bftime)
     {
         // 由接受者的Transform获取它的实体（其实就是对应脚本）
         BaseGameEntity receiver = EntityManager.Instance.GetEntityFromTransform(receiverTrans);
-        Telegram telegram = new Telegram(delay, senderTrans, receiverTrans, msg, _mb,hurt1,buff1);
+        Telegram telegram = new Telegram(delay, senderTrans, receiverTrans, msg, _mb,hurt1, buff,bfvalue,bftime);
 
         if (delay <= 0.0f)
         {
@@ -83,6 +117,89 @@ public class MessageDispatcher
             PriorityQ.Add(telegram);
         }
     }
+
+    /// <summary>
+    /// 在实体之间传递消息
+    /// </summary>
+    /// <param name="delay">该消息延迟执行的时间</param>
+    /// <param name="senderTrans">消息发送者</param>
+    /// <param name="receiverTrans">消息接受者</param>
+    /// <param name="msg">消息的类型，由一个枚举值转化而来</param>
+    /// <param name="_mb">当前游戏实体（就是挂在目标游戏物体上的相应脚本）</param>
+    public void DispatchMessage(float delay, Transform senderTrans, Transform receiverTrans, int msg, MonoBehaviour _mb, float hurt1, EnumDefine.DeBuffType debuff,float bfvalue,float bftime)
+    {
+        // 由接受者的Transform获取它的实体（其实就是对应脚本）
+        BaseGameEntity receiver = EntityManager.Instance.GetEntityFromTransform(receiverTrans);
+        Telegram telegram = new Telegram(delay, senderTrans, receiverTrans, msg, _mb, hurt1, debuff,bfvalue,bftime);
+
+        if (delay <= 0.0f)
+        {
+            //Debug.Log("No Delay");
+            Discharge(receiver, telegram);
+        }
+        else
+        {
+            //Debug.Log("In Delay");
+            // 目前经过的时间，从游戏开始之后计算
+            float currentTime = Time.realtimeSinceStartup;
+            telegram.DispatchTime = currentTime + delay;
+
+            // 查找重复的消息，重复的话就直接return
+            foreach (Telegram val in PriorityQ)
+            {
+                if (val.SenderTrans == senderTrans && val.ReceiverTrans == receiverTrans && val.Msg == msg)
+                {
+                    return;
+                }
+            }
+
+            // 一个延时执行的消息队列
+            PriorityQ.Add(telegram);
+        }
+    }
+
+
+    /// <summary>
+    /// 在实体之间传递消息
+    /// </summary>
+    /// <param name="delay">该消息延迟执行的时间</param>
+    /// <param name="senderTrans">消息发送者</param>
+    /// <param name="receiverTrans">消息接受者</param>
+    /// <param name="msg">消息的类型，由一个枚举值转化而来</param>
+    /// <param name="_mb">当前游戏实体（就是挂在目标游戏物体上的相应脚本）</param>
+    public void DispatchMessage(float delay, Transform senderTrans, Transform receiverTrans, int msg, MonoBehaviour _mb, float hurt1)
+    {
+        // 由接受者的Transform获取它的实体（其实就是对应脚本）
+        BaseGameEntity receiver = EntityManager.Instance.GetEntityFromTransform(receiverTrans);
+        Telegram telegram = new Telegram(delay, senderTrans, receiverTrans, msg, _mb, hurt1);
+
+        if (delay <= 0.0f)
+        {
+            //Debug.Log("No Delay");
+            Discharge(receiver, telegram);
+        }
+        else
+        {
+            //Debug.Log("In Delay");
+            // 目前经过的时间，从游戏开始之后计算
+            float currentTime = Time.realtimeSinceStartup;
+            telegram.DispatchTime = currentTime + delay;
+
+            // 查找重复的消息，重复的话就直接return
+            foreach (Telegram val in PriorityQ)
+            {
+                if (val.SenderTrans == senderTrans && val.ReceiverTrans == receiverTrans && val.Msg == msg)
+                {
+                    return;
+                }
+            }
+
+            // 一个延时执行的消息队列
+            PriorityQ.Add(telegram);
+        }
+    }
+
+
 
     /// <summary>
     /// 延时消息队列的检测和执行

@@ -150,11 +150,12 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
                     break;
             }
 
-           
-            //发送伤害消息
-            MessageDispatcher.Instance.DispatchMessage(0.5f, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
-            Debug.Log("<Color=red>远程攻击</Color>");
-                
+                if (entity.CheckAttackDistance())
+                {
+                    //发送伤害消息
+                    MessageDispatcher.Instance.DispatchMessage(0.5f, entity.transform, entity.FightObject.transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f,EnumDefine.BuffType.Fire,100,10);
+                    Debug.Log("<Color=red>远程攻击</Color>");
+                }
             }
            
 
@@ -215,11 +216,12 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
                     default:
                         break;
                 }
+                if (entity.CheckAttackDistance())
+                {
 
-
-                MessageDispatcher.Instance.DispatchMessage(0.5f, entity.transform, AttackList[i].transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f, Buff.Burnt);
-                Debug.Log("<Color=red>远程攻击</Color>");
-
+                    MessageDispatcher.Instance.DispatchMessage(0.5f, entity.transform, AttackList[i].transform, (int)EnumDefine.MessageType.Hurt, EntityManager.Instance.GetEntityFromTransform(entity.transform), 10f,EnumDefine.DeBuffType.Fire,100,10);
+                    Debug.Log("<Color=red>远程攻击</Color>");
+                }
             }
            
 
@@ -228,6 +230,9 @@ public class MMORPG_BaseObject_Player_State_Attack : State<MMORPG_BaseObject_Pla
         }
 
     }
+
+
+
     #endregion
 
 

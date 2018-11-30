@@ -134,7 +134,7 @@ public class MMORPG_BaseObject : BaseGameEntity
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            Debug.Log("测试增加一个buff");
+            Debug.Log(this.gameObject.name+"--->:测试增加一个buff");
             AddDeBuff(EnumDefine.DeBuffType.Fire,10,10);
         }
 
@@ -245,8 +245,9 @@ public class MMORPG_BaseObject : BaseGameEntity
     /// <param name="type"></param>
     /// <param name="time"></param>
     /// <param name="value"></param>
-    protected void AddBuff(EnumDefine.BuffType type, float time, float value)
+    public void AddBuff(EnumDefine.BuffType type, float time, float value)
     {
+        Debug.Log(this.gameObject.name + "--->:测试增加一个buff" + "--->" + type.ToString());
         MMORPG_BaseBuff buff = m_buffs.Find(x => x.GetBuffType() == type);
         if (buff != null)
         {
@@ -290,8 +291,9 @@ public class MMORPG_BaseObject : BaseGameEntity
     /// <param name="type"></param>
     /// <param name="time"></param>
     /// <param name="value"></param>
-    protected void AddDeBuff(EnumDefine.DeBuffType type,float time,float value)
+    public void AddDeBuff(EnumDefine.DeBuffType type,float time,float value)
     {
+        Debug.Log(this.gameObject.name + "--->:测试增加一个debuff"+"--->"+type.ToString());
         MMORPG_BaseDeBuff debuff = m_debuffs.Find(x => x.GetDeBuffType() == type);
         if (debuff != null)
         {

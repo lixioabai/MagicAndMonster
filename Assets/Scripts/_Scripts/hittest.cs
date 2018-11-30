@@ -54,7 +54,7 @@ public class hittest : MonoBehaviour {
             {
                 if (other.gameObject == o.gameObject)
                 {
-                    MessageDispatcher.Instance.DispatchMessage(0, this.transform, other.transform, (int)MessagesType.Msg_BeingHurt, EntityManager.Instance.GetEntityFromTransform(this.transform), 10f, Buff.Burnt);
+                    MessageDispatcher.Instance.DispatchMessage(0, this.transform, other.transform, (int)MessagesType.Msg_BeingHurt, EntityManager.Instance.GetEntityFromTransform(this.transform), 10f);
                     enemymotor = other.GetComponent<RPGMotor>();
                     texiao = (GameObject)Instantiate(beijitexiao, new Vector3(other.transform.position.x, other.transform.position.y + 1f, other.transform.position.z), other.transform.rotation);
                     Destroy(texiao, 1f);

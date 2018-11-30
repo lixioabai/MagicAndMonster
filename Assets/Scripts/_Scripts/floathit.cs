@@ -24,12 +24,12 @@ public class floathit : MonoBehaviour {
             {
                 if (i % 2 == 0)
                 {
-                    MessageDispatcher.Instance.DispatchMessage(0, this.transform, other.transform, (int)MessagesType.Msg_BeingUpFukongBig, EntityManager.Instance.GetEntityFromTransform(this.transform), 10f, Buff.Burnt);
+                    MessageDispatcher.Instance.DispatchMessage(0, this.transform, other.transform, (int)MessagesType.Msg_BeingUpFukongBig, EntityManager.Instance.GetEntityFromTransform(this.transform), 10f);
                     i++;
                 }
                 else
                 {
-                    MessageDispatcher.Instance.DispatchMessage(0, this.transform, other.transform, (int)MessagesType.Msg_BeingUpFukongSmall, EntityManager.Instance.GetEntityFromTransform(this.transform), 10f, Buff.Burnt);
+                    MessageDispatcher.Instance.DispatchMessage(0, this.transform, other.transform, (int)MessagesType.Msg_BeingUpFukongSmall, EntityManager.Instance.GetEntityFromTransform(this.transform), 10f);
                     i++;
                 }
                     canhit = false;
